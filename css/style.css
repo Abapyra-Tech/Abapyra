@@ -238,6 +238,101 @@ nav {
 .link-orange { color: #f97316; }
 .link-blue   { color: #3b82f6; }
 
+/* Sobre nós */
+
+.sobre{
+    padding:80px 10%;
+    background:linear-gradient(90deg,#062d2b,#0b5c2e);
+    color:white;
+}
+
+.sobre-container{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.sobre-img img{
+    width:420px;
+    border-radius:10px;
+}
+
+.sobre-texto h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.sobre-texto p{
+    line-height:1.7;
+    color:#dcdcdc;
+}
+
+/* pilares */
+
+.pilares{
+    padding:80px 10%;
+    text-align:center;
+    background:linear-gradient(180deg,#0b5c2e,#0a3d2b);
+    color:white;
+}
+
+.pilares h2{
+    font-size:32px;
+}
+
+.subtitulo{
+    margin-top:10px;
+    margin-bottom:50px;
+    color:#cfcfcf;
+}
+
+/* cards */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.card{
+    background:#f5f5f5;
+    color:#333;
+    padding:30px;
+    border-radius:12px;
+    width:280px;
+    text-align:left;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+.card li{
+    margin-bottom:8px;
+}
+
+.lista-valores{
+    list-style:none;
+    padding:0;
+}
+
+.lista-valores li{
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.lista-valores i{
+    color:#1fbf75;
+    font-size:16px;
+}
+
+
 /* ── COMO TRABALHAMOS ── */
 .como-trabalhamos {
     background-color: #1F2937;
