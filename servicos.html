@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abapyra</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/servicos.css">
+</head>
+
+<body>
+
+    <header id="header"></header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-texto">
+            <h1>Serviço de <span class="laranja">Reparos</span></h1>
+            <p>Conserte seus aparelhos eletrônicos utilizando peças de outros dispositivos quebrados.</p>
+            <p class="destaque">Economia e sustentabilidade juntas!</p>
+        </div>
+        <div class="hero-img">
+            <img src="./imagens/hero-servicos.png" alt="Técnicos fazendo reparo" />
+        </div>
+    </section>
+
+    <!-- BUSCA -->
+    <section class="busca">
+        <h2>Encontre técnicos próximos</h2>
+        <p>Digite seu CEP ou localização para encontrar profissionais qualificados na sua região.</p>
+        <div class="busca-box">
+            <div class="input-wrap">
+                <span>📍</span>
+                <input type="text" placeholder="Digite o seu CEP" />
+            </div>
+            <button class="busca-btn">🔍</button>
+        </div>
+    </section>
+
+    <!-- CADASTRO -->
+    <section class="cadastro">
+        <div class="cadastro-topo">
+            <span class="icone-chave">🔧</span>
+            <h2>Cadastre-se como <span class="laranja">Técnico</span></h2>
+            <p>Faça parte da nossa rede de profissionais e aumente seus ganhos.</p>
+        </div>
+
+        <ul class="requisitos">
+            <li>
+                <span class="check">✅</span>
+                <div>
+                    <strong>Experiência com reparos</strong>
+                    <p>Faça parte da nossa rede de profissionais e aumente seus ganhos.</p>
+                </div>
+            </li>
+            <li>
+                <span class="check">✅</span>
+                <div>
+                    <strong>Ferramentas ou oficinas</strong>
+                    <p>Equipamentos necessários para realizar os reparos.</p>
+                </div>
+            </li>
+            <li>
+                <span class="check">✅</span>
+                <div>
+                    <strong>Compromisso com atendimento de qualidade</strong>
+                    <p>Realizar diagnósticos responsáveis, oferecer soluções transparentes e prestar um serviço
+                        confiável para a comunidade.</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="form-wrap">
+            <h3>Formulário para cadastro</h3>
+            <form class="form">
+                <div class="field">
+                    <span>👤</span>
+                    <input type="text" placeholder="Nome completo" />
+                </div>
+                <div class="field">
+                    <span>🏘️</span>
+                    <input type="text" placeholder="Bairro" />
+                </div>
+                <div class="field">
+                    <span>⚙️</span>
+                    <input type="text" placeholder="Especialidade" />
+                </div>
+                <div class="field">
+                    <span>📱</span>
+                    <input type="text" placeholder="Informações de contato (E-mail, número de telefone)..." />
+                </div>
+                <button type="submit" class="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer id="footer"></footer>
+
+    <script>
+        // Carrega header e footer automaticamente
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+
+</html>
