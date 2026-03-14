@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abapyra</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/educacao.css">
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <section class="curso">
+        <h1>Cursos Gratuitos de Tecnologia e Manutenção Eletrônica</h1>
+        <p>Aprenda do básico ao avançado. Para jovens a partir de 16 anos, comunidades e baixa renda. Aulas com voluntários experientes.</p>
+        <button>Inscreva-se Gratuitamente</button>
+    </section>
+
+    <section class="sobre">
+        <h1>Sobre os cursos</h1>
+        <div class="cardsEducacao">
+            <div class="cardEducacao">
+                <h3>Gratuito e Online</h3>
+                <p>Acesso completo sem custos. Aprenda no seu ritmo, de qualquer lugar.</p>
+            </div>
+            <div class="cardEducacao">
+                <h3>Aulas Práticas Voluntárias</h3>
+                <p>Aprenda com profissionais experientes que doam seu tempo para ensinar.</p>
+            </div>
+            <div class="cardEducacao">
+                <h3>Certificado</h3>
+                <p>Receba certificado de conclusão gratuito ao finalizar cada curso.</p>
+            </div>
+            <div class="cardEducacao">
+                <h3>Inclusão e Sustentabilidade</h3>
+                <p>Educação acessível focada em reparos e economia circular.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cursos-section">
+
+        <h2>Nossos Cursos <span>Disponíveis</span></h2>
+        <p class="subtitulo">Escolha o curso ideal para seu nível e área de interesse</p>
+
+        <div class="carousel-viewport">
+            <div class="carousel-track" id="track">
+
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="./Imagens/introducao-eletronica.png" alt="Introdução à Eletrônica">
+                        <span class="badge">Iniciante</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Introdução à Eletrônica</h3>
+                        <span class="meta">⏱ 4 semanas · Iniciante</span>
+                        <p>Aprenda os fundamentos da eletrônica: componentes, circuitos básicos e leitura de esquemas.</p>
+                        <a href="#" class="btn">Acessar Curso</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="./Imagens/soldagem.png" alt="Soldagem e Reparo de Placas">
+                        <span class="badge intermediario">Intermediário</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Soldagem e Reparo de Placas</h3>
+                        <span class="meta">⏱ 6 semanas · Intermediário</span>
+                        <p>Técnicas de soldagem profissional, desmontagem e reparo de componentes SMD.</p>
+                        <a href="#" class="btn">Acessar Curso</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="./Imagens/manutencao.png" alt="Manutenção de Computadores">
+                        <span class="badge">Iniciante</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Manutenção de Computadores</h3>
+                        <span class="meta">⏱ 8 semanas · Iniciante</span>
+                        <p>Montagem, desmontagem e diagnóstico de problemas em PCs e notebooks.</p>
+                        <a href="#" class="btn">Acessar Curso</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="./Imagens/micro.png" alt="Microcontroladores Arduino">
+                        <span class="badge intermediario">Intermediário</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Microcontroladores Arduino</h3>
+                        <span class="meta">⏱ 8 semanas · Intermediário</span>
+                        <p>Programação básica e projetos práticos para automação e IoT com Arduino.</p>
+                        <a href="#" class="btn">Acessar Curso</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="./Imagens/reparo.png" alt="Reparo de Smartphones">
+                        <span class="badge">Iniciante</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Reparo de Smartphones</h3>
+                        <span class="meta">⏱ 10 semanas · Iniciante</span>
+                        <p>Diagnóstico avançado, troca de tela e reparo de baterias de celulares.</p>
+                        <a href="#" class="btn">Acessar Curso</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="./Imagens/eletronica.png" alt="Eletrônica de Potência">
+                        <span class="badge avancado">Avançado</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Eletrônica de Potência</h3>
+                        <span class="meta">⏱ 12 semanas · Avançado</span>
+                        <p>Fontes chaveadas, inversores e conversores de energia para aplicações industriais.</p>
+                        <a href="#" class="btn">Acessar Curso</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="nav">
+            <button id="prev">&#8592;</button>
+            <button id="next">&#8594;</button>
+        </div>
+
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script src="./cursos.js"></script>
+    <script>
+        fetch('includes/header.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('header').innerHTML = d);
+
+        fetch('includes/footer.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('footer').innerHTML = d);
+    </script>
+</body>
+
+</html>

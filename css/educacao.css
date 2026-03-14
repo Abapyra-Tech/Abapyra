@@ -1,0 +1,306 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* HERO */
+
+.curso{
+    min-height:600px;
+    padding:40px;
+
+    background-image:url("../Imagens/fundo-cursos.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.curso::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.curso h1,
+.curso p,
+.curso button{
+    position:relative;
+    z-index:1;
+}
+
+.curso h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.curso p{
+    font-size:18px;
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.curso button{
+    padding:14px 32px;
+    font-size:16px;
+    background:#ff8c00;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* SOBRE */
+
+.sobre{
+    min-height:500px;
+    padding:80px 20px;
+
+    background:#1f3f37;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.sobre h1{
+    color:white;
+    font-size:32px;
+    margin-bottom:40px;
+}
+
+.cardsEducacao{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+    width:100%;
+    max-width:800px;
+}
+
+.cardEducacao{
+    padding:25px 30px;
+
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:12px;
+
+    color:white;
+    text-align:left;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+
+    transition:0.25s;
+}
+
+.cardEducacao h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.cardEducacao p{
+    font-size:15px;
+    line-height:1.6;
+    opacity:0.9;
+}
+
+.cardEducacao:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.35);
+    border-color:#19d4a6;
+}
+
+/* CURSOS */
+
+.cursos-section {
+    background: #1a2e22;
+    padding: 60px 24px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #e8f5ee;
+}
+
+.cursos-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.cursos-section h2 span {
+    color: #2dce7a;
+}
+
+.subtitulo {
+    color: #a0c4ae;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+
+/* Carrossel */
+
+.carousel-viewport {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+/* Card */
+
+.card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    background: #1e3328;
+    border-radius: 14px;
+    border: 1px solid rgba(45, 206, 122, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(45, 206, 122, 0.5);
+}
+
+/* Thumb com imagem */
+
+.card-thumb {
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Badge */
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background: #2dce7a;
+    color: #052e16;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+}
+
+.badge.intermediario { background: #f59e0b; color: #3d2200; }
+.badge.avancado      { background: #ef4444; color: #fff; }
+
+/* Card body */
+
+.card-body {
+    padding: 16px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: left;
+}
+
+.card-body h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.meta {
+    font-size: 0.75rem;
+    color: #2dce7a;
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    font-size: 0.8rem;
+    color: #a0c4ae;
+    line-height: 1.5;
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.btn {
+    display: block;
+    background: #2dce7a;
+    color: #052e16;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #22b869;
+}
+
+/* Navegação */
+
+.nav {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.nav button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #1e3328;
+    border: 1px solid rgba(45, 206, 122, 0.3);
+    color: #2dce7a;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav button:hover {
+    background: #243d2c;
+    border-color: #2dce7a;
+}
+
+.nav button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Responsivo */
+
+@media (max-width: 900px) {
+    .card { flex: 0 0 calc((100% - 20px) / 2); }
+}
+
+@media (max-width: 560px) {
+    .card { flex: 0 0 100%; }
+}
