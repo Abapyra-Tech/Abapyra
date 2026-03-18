@@ -161,6 +161,7 @@
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
+    width: 100%;
 }
 
 /* Card */
@@ -246,7 +247,7 @@
     margin-bottom: 16px;
 }
 
-.btn {
+.btn-curso {
     display: block;
     background: #2dce7a;
     color: #052e16;
@@ -260,7 +261,7 @@
     transition: background 0.2s;
 }
 
-.btn:hover {
+.btn-curso:hover {
     background: #22b869;
 }
 

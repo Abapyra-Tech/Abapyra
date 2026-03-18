@@ -95,21 +95,64 @@ body {
 .input-wrap input::placeholder { color: rgba(255,255,255,0.45); }
 
 .busca-btn {
-  width: 48px;
-  height: 48px;
+  padding: 12px 20px;
   border-radius: 8px;
   background: #22c55e;
   border: none;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #052e16;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
   transition: background .2s;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .busca-btn:hover { background: #16a34a; }
+
+/* Mensagem de status da busca */
+.busca-msg {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  min-height: 20px;
+  margin: 12px 0 16px;
+}
+
+.busca-msg.erro {
+  color: #f87171;
+}
+
+.input-wrap input:focus,
+.input-wrap input:not(:placeholder-shown) {
+    background: transparent !important;
+    color: #ffffff;
+}
+
+/* Mapa */
+#mapa-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+#mapa {
+  height: 400px;
+  width: 100%;
+}
+
+.mapa-legenda {
+  background: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8rem;
+  padding: 8px;
+  margin: 0;
+  text-align: center;
+}
 
 /* ── CADASTRO TÉCNICO ── */
 .cadastro {
@@ -176,6 +219,7 @@ body {
 }
 
 /* ── FORMULÁRIO ── */
+
 .form-wrap {
   background: #c8d5c8;
   border-radius: 16px;
@@ -242,4 +286,6 @@ body {
   .hero-img img { width: 100%; }
   .busca, .cadastro { padding: 48px 24px; }
   .form-wrap { padding: 24px 20px; }
+  #mapa { height: 300px; }
 }
+

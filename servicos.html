@@ -6,6 +6,8 @@
     <title>Abapyra</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/servicos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/926a9cde8e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -27,14 +29,22 @@
 
     <!-- BUSCA -->
     <section class="busca">
-        <h2>Encontre técnicos próximos</h2>
-        <p>Digite seu CEP ou localização para encontrar profissionais qualificados na sua região.</p>
+        <h2>Encontre técnicos <span class="laranja">próximos</span></h2>
+        <p>Digite seu CEP para encontrar profissionais qualificados na sua região.</p>
+
         <div class="busca-box">
             <div class="input-wrap">
                 <span>📍</span>
-                <input type="text" placeholder="Digite o seu CEP" />
+                <input type="text" id="cep-input" placeholder="Digite o seu CEP" maxlength="9" />
             </div>
-            <button class="busca-btn">🔍</button>
+            <button class="busca-btn" onclick="buscarTecnicos()">🔍 Buscar</button>
+        </div>
+
+        <p id="busca-msg" class="busca-msg"></p>
+
+        <div id="mapa-wrapper" style="display:none;">
+            <div id="mapa"></div>
+            <p class="mapa-legenda">🟢 Você &nbsp;|&nbsp; 🟠 Técnicos disponíveis na sua região</p>
         </div>
     </section>
 
@@ -95,19 +105,9 @@
         </div>
     </section>
 
-
     <footer id="footer"></footer>
 
-    <script>
-        // Carrega header e footer automaticamente
-        fetch('includes/header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data);
+    <script src="./js/servicos.js"></script>
 
-        fetch('includes/footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer').innerHTML = data);
-    </script>
 </body>
-
 </html>
