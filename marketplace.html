@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Sustentável</title>
+    <link rel="stylesheet" href="./css/marketplace.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <div class="container">
+
+        <header>
+            <h1 class="titulo">Marketplace Sustentável</h1>
+
+            <div class="acoes">
+
+                <button class="btn">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Vender Eletrônicos</span>
+                </button>
+
+                <button class="btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Comprar Eletrônicos</span>
+                </button>
+
+            </div>
+
+            <p>
+                <strong>Venda eletrônicos usados ou quebrados e compre equipamentos
+                    reaproveitados em nossa plataforma sustentável</strong>
+            </p>
+
+            <div class="beneficios">
+                <span>Preços acessíveis</span>
+                <span>Vendedores verificados</span>
+                <span>Sustentável</span>
+            </div>
+
+        </header>
+
+        <section class="produtos">
+
+            <h2 class="titulo-produtos">Produtos <span>Disponíveis</span></h2>
+
+            <div class="categorias">
+
+                <a href="#">Smartphones</a>
+                <a href="#">Notebooks</a>
+                <a href="#">Celulares</a>
+                <a href="#">Componentes</a>
+                <a href="#">Peças</a>
+                <a href="#">Todos</a>
+
+            </div>
+
+            <div class="busca-cep">
+
+                <div class="input-cep">
+                    <span class="icon">📍</span>
+                    <input type="text" placeholder="Digite o seu CEP">
+                </div>
+
+                <button class="btn-buscar">🔍</button>
+
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <img src="imagens/099a3140b59323f8f7580752f8752b1c 1.png">
+                    <h3>Iphone 11 128GB</h3>
+                    <p>Defeito: Não liga</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagens/fonte.png">
+                    <h3>Fonte Corsair 650W
+                    </h3>
+                    <p>Defeito: Não liga, possível reparo</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagens/relogio.png">
+                    <h3> Tela quebrada - Apple</h3>
+                    <p>Defeito: Não liga, possível reparo</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagens/placa.png">
+                    <h3>Placa Notebook Dell</h3>
+                    <p>Defeito: Queimada</p>
+                    <span class="preco">R$ 150</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="info-lixo">
+            Este marketplace já evitou <strong>140kg</strong> de lixo eletrônico.
+        </div>
+
+
+        <section class="anuncio">
+
+            <h2>Anuncie seu produto</h2>
+
+            <form>
+
+                <input type="text" placeholder="Nome completo">
+
+                <input type="text" placeholder="Bairro">
+
+                <input type="text" placeholder="Produto">
+
+                <textarea placeholder="Descrição"></textarea>
+
+                <button type="submit">Anunciar</button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="./cursos.js"></script>
+    <script>
+        fetch('includes/header.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('header').innerHTML = d);
+
+        fetch('includes/footer.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('footer').innerHTML = d);
+    </script>
+
+</body>
+
+
+
+</html>
