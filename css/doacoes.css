@@ -1,0 +1,367 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #1a1a1a;
+}
+
+.laranja { color: #f97316; }
+
+/* ── HERO ── */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    background-color: #1F2937;
+    color: #ffffff;
+    gap: 40px;
+    min-height: 320px;
+}
+
+.hero-texto h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-texto p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 420px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-doe {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    background: #1a3d2b;
+    color: #ffffff;
+    border: 1px solid #2d6a45;
+    transition: background .2s;
+}
+
+.btn-doe:hover { background: #22c55e; }
+
+.hero-img img {
+    width: 380px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ── O QUE PODE DOAR ── */
+.pode-doar {
+    background: #ffffff;
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.pode-doar-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.pode-doar-header p {
+    font-size: 0.95rem;
+    color: #555;
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+}
+
+.pode-doar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.doar-card {
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.doar-icon {
+    font-size: 2rem;
+    color: #22c55e;
+}
+
+.doar-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.doar-card p {
+    font-size: 0.83rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ── FORMULÁRIO ── */
+.secao-form {
+    background: #e5e7eb;
+    padding: 70px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrap {
+    background: #d1d5db;
+    border-radius: 16px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 680px;
+}
+
+.form-wrap h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 28px;
+}
+
+.form-doacao {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grupo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #374151;
+    background: #ffffff;
+    outline: none;
+    font-family: Arial, sans-serif;
+    transition: border-color .2s;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: #22c55e;
+}
+
+.form-grupo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 200px;
+    align-self: center;
+    transition: background .2s;
+}
+
+.btn-submit:hover { background: #16a34a; }
+
+/* ── HISTÓRIAS ── */
+.historias {
+    background-image: url('../Imagens/bacground-servicos.png');
+    padding: 70px 8%;
+    color: #ffffff;
+}
+
+.historias-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.historias-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.historias-header p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+}
+
+.historias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.historia-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.historia-perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.historia-perfil img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e5e7eb;
+}
+
+.historia-perfil strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.historia-perfil span {
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
+.historia-card p {
+    font-size: 0.88rem;
+    color: #374151;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.historia-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.tag-verde  { color: #22c55e; }
+.tag-laranja { color: #f97316; }
+
+/* ── OUTRAS FORMAS DE AJUDAR ── */
+.outras-formas {
+    background: #f0f4f8;
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.outras-header {
+    margin-bottom: 48px;
+}
+
+.outras-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.outras-header p {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+.outras-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.outras-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 36px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.outras-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.outras-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.outras-card p {
+    font-size: 0.88rem;
+    color: #6b7280;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.outras-card a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    margin-top: 4px;
+    transition: color .2s;
+}
+
+.outras-card a:hover {
+    color: #1d4ed8;
+}
