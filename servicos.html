@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abapyra</title>
+    <meta name="description" content="Encontre técnicos especializados em reparos de eletrônicos próximos a você.">
+    <title>Serviço de Reparos - Abapyra</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/servicos.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://kit.fontawesome.com/926a9cde8e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,63 +15,74 @@
     <header id="header"></header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" aria-label="Seção hero com informações sobre serviço de reparos">
         <div class="hero-texto">
             <h1>Serviço de <span class="laranja">Reparos</span></h1>
             <p>Conserte seus aparelhos eletrônicos utilizando peças de outros dispositivos quebrados.</p>
             <p class="destaque">Economia e sustentabilidade juntas!</p>
         </div>
         <div class="hero-img">
-            <img src="./imagens/hero-servicos.png" alt="Técnicos fazendo reparo" />
+            <img src="./imagens/hero-servicos.png" alt="Técnicos fazendo reparo" loading="lazy" />
         </div>
     </section>
 
     <!-- BUSCA -->
-    <section class="busca">
+    <section class="busca" aria-label="Seção de busca de técnicos por CEP">
         <h2>Encontre técnicos <span class="laranja">próximos</span></h2>
         <p>Digite seu CEP para encontrar profissionais qualificados na sua região.</p>
 
         <div class="busca-box">
             <div class="input-wrap">
-                <span>📍</span>
-                <input type="text" id="cep-input" placeholder="Digite o seu CEP" maxlength="9" />
+                <span aria-hidden="true">📍</span>
+                <input 
+                    type="text" 
+                    id="cep-input" 
+                    placeholder="Digite o seu CEP" 
+                    maxlength="9"
+                    aria-label="Campo para digitar CEP"
+                    autocomplete="postal-code" />
             </div>
-            <button class="busca-btn" onclick="buscarTecnicos()">🔍 Buscar</button>
+            <button id="busca-btn" class="busca-btn" aria-label="Botão para buscar técnicos">🔍 Buscar</button>
         </div>
 
-        <p id="busca-msg" class="busca-msg"></p>
+        <p id="busca-msg" class="busca-msg" role="alert" aria-live="polite"></p>
 
-        <div id="mapa-wrapper" style="display:none;">
-            <div id="mapa"></div>
-            <p class="mapa-legenda">🟢 Você &nbsp;|&nbsp; 🟠 Técnicos disponíveis na sua região</p>
+        <div id="mapa-wrapper" class="mapa-wrapper" hidden>
+            <iframe 
+                id="mapa" 
+                src="" 
+                title="Mapa mostrando localização e técnicos próximos"
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
     <!-- CADASTRO -->
-    <section class="cadastro">
+    <section class="cadastro" aria-label="Seção de cadastro para técnicos">
         <div class="cadastro-topo">
-            <span class="icone-chave">🔧</span>
+            <span class="icone-chave" aria-hidden="true">🔧</span>
             <h2>Cadastre-se como <span class="laranja">Técnico</span></h2>
             <p>Faça parte da nossa rede de profissionais e aumente seus ganhos.</p>
         </div>
 
         <ul class="requisitos">
             <li>
-                <span class="check">✅</span>
+                <span class="check" aria-hidden="true">✅</span>
                 <div>
                     <strong>Experiência com reparos</strong>
                     <p>Faça parte da nossa rede de profissionais e aumente seus ganhos.</p>
                 </div>
             </li>
             <li>
-                <span class="check">✅</span>
+                <span class="check" aria-hidden="true">✅</span>
                 <div>
                     <strong>Ferramentas ou oficinas</strong>
                     <p>Equipamentos necessários para realizar os reparos.</p>
                 </div>
             </li>
             <li>
-                <span class="check">✅</span>
+                <span class="check" aria-hidden="true">✅</span>
                 <div>
                     <strong>Compromisso com atendimento de qualidade</strong>
                     <p>Realizar diagnósticos responsáveis, oferecer soluções transparentes e prestar um serviço
@@ -83,22 +93,42 @@
 
         <div class="form-wrap">
             <h3>Formulário para cadastro</h3>
-            <form class="form">
+            <form id="cadastro-form" class="form" novalidate>
                 <div class="field">
-                    <span>👤</span>
-                    <input type="text" placeholder="Nome completo" />
+                    <span aria-hidden="true">👤</span>
+                    <input 
+                        type="text" 
+                        name="nome" 
+                        placeholder="Nome completo" 
+                        required
+                        aria-label="Campo de nome completo" />
                 </div>
                 <div class="field">
-                    <span>🏘️</span>
-                    <input type="text" placeholder="CEP/Bairro" />
+                    <span aria-hidden="true">🏘️</span>
+                    <input 
+                        type="text" 
+                        name="cep" 
+                        placeholder="CEP/Bairro" 
+                        required
+                        aria-label="Campo de CEP ou bairro" />
                 </div>
                 <div class="field">
-                    <span>⚙️</span>
-                    <input type="text" placeholder="Especialidade" />
+                    <span aria-hidden="true">⚙️</span>
+                    <input 
+                        type="text" 
+                        name="especialidade" 
+                        placeholder="Especialidade" 
+                        required
+                        aria-label="Campo de especialidade" />
                 </div>
                 <div class="field">
-                    <span>📱</span>
-                    <input type="text" placeholder="Informações de contato (E-mail, número de telefone)..." />
+                    <span aria-hidden="true">📱</span>
+                    <input 
+                        type="email" 
+                        name="contato" 
+                        placeholder="E-mail ou telefone" 
+                        required
+                        aria-label="Campo de informações de contato" />
                 </div>
                 <button type="submit" class="submit">Enviar</button>
             </form>
@@ -106,8 +136,9 @@
     </section>
 
     <footer id="footer"></footer>
-
+    
     <script src="./js/servicos.js"></script>
 
 </body>
+
 </html>
