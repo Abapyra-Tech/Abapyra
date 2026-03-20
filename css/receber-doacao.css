@@ -1,0 +1,478 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+.laranja { color: #f97316; }
+
+/* ── HERO ── */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    background-color: #1F2937;
+    color: #ffffff;
+    gap: 40px;
+}
+
+.hero-texto h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.hero-texto p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 420px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-verde {
+    padding: 12px 24px;
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s;
+}
+
+.btn-verde:hover { background: #16a34a; }
+
+.btn-outline {
+    padding: 12px 24px;
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: border-color .2s;
+}
+
+.btn-outline:hover { border-color: #fff; }
+
+.hero-img img {
+    width: 360px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ── COMO FUNCIONA ── */
+.como-funciona {
+    padding: 70px 8%;
+    text-align: center;
+    background: #ffffff;
+}
+
+.como-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.como-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 48px;
+}
+
+.como-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.como-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.como-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #1F2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.como-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.como-card p {
+    font-size: 0.82rem;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* ── REQUISITOS ── */
+.requisitos {
+    padding: 70px 8%;
+    background: #f9fafb;
+}
+
+.requisitos-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.requisitos-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.requisitos-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.requisitos-box {
+    background: #1a3d2b;
+    border-radius: 16px;
+    padding: 36px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.requisitos-box ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.requisitos-box li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.req-check { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+
+.requisitos-box strong {
+    display: block;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.requisitos-box p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+}
+
+/* ── PROJETOS ── */
+.projetos {
+    padding: 70px 8%;
+    background: #1F2937;
+    color: #ffffff;
+}
+
+.projetos-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.projetos-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.projetos-header p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+}
+
+.projetos-busca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+.busca-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.busca-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.busca-box input::placeholder { color: rgba(255,255,255,0.45); }
+
+.busca-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #22c55e;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background .2s;
+}
+
+.busca-btn:hover { background: #16a34a; }
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projeto-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    color: #1a1a1a;
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.projeto-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.projeto-body h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.projeto-local {
+    font-size: 0.8rem;
+    color: #f97316;
+}
+
+.projeto-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background: #e5e7eb;
+    border-radius: 100px;
+    padding: 3px 10px;
+    color: #374151;
+}
+
+.projeto-alunos {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.btn-projeto {
+    display: block;
+    text-align: center;
+    background: #22c55e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: background .2s;
+}
+
+.btn-projeto:hover { background: #16a34a; }
+
+/* ── FORMULÁRIO ONG ── */
+.cadastro-ong {
+    padding: 70px 8%;
+    background: #ffffff;
+}
+
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.cadastro-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cadastro-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.form-ong {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #e5e7eb;
+    border-radius: 16px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grupo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #374151;
+    background: #ffffff;
+    outline: none;
+    font-family: Arial, sans-serif;
+    transition: border-color .2s;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: #22c55e;
+}
+
+.form-grupo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.upload-area {
+    border: 2px dashed #d1d5db;
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+    background: #f9fafb;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 0.88rem;
+}
+
+.upload-area span { font-size: 2rem; display: block; margin-bottom: 8px; }
+.upload-area small { font-size: 0.78rem; color: #9ca3af; }
+
+.btn-lg {
+    width: 200px;
+    align-self: center;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-aviso {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    text-align: center;
+    margin: 0;
+}
+
+/* ── IMPACTO SOCIAL ── */
+.impacto {
+    background: #1F2937;
+    padding: 70px 8%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.impacto-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.impacto-header p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 48px;
+}
+
+.impacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.impacto-item strong {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.impacto-item span {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+}
