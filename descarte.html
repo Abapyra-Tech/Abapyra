@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AbapyraTech – Descarte Eletrônico</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/descarte.css" />
+</head>
+
+<body>
+  <header id="header"></header>
+
+  <!-- ══ CONTEÚDO DA PÁGINA — escopado em .page-descarte ══ -->
+  <div class="page-descarte">
+
+    <!-- ── HERO ── -->
+    <div class="hero">
+      <div class="fade-in">
+        <div class="hero-tag">♻️ Descarte Responsável</div>
+        <h1>Tem eletrônicos, cabos ou<br /><span>lixo eletrônico</span> que não<br />têm mais utilidade?</h1>
+        <p>Tem uma solução para você! Mesmo quando um eletrônico não pode mais ser reutilizado, ele precisa de um processo de descarte correto. O descarte inadequado pode contaminar o meio ambiente e desperdiçar materiais valiosos que podem ser reciclados.</p>
+        <div class="hero-ctas">
+          <a href="#busca" class="btn btn-orange">Encontrar ponto de descarte</a>
+          <a href="#porque" class="btn btn-outline">Saiba mais</a>
+        </div>
+      </div>
+
+      <div class="hero-img-placeholder fade-in delay-2">
+        <div class="e-icon">🖥️</div>
+        <div class="e-label">Descarte consciente de eletrônicos</div>
+      </div>
+    </div>
+
+    <!-- ── BUSCA ── -->
+    <section id="busca">
+      <div class="section-inner">
+        <h2 class="section-title fade-in">Encontre o ponto de descarte mais próximo</h2>
+        <p class="section-sub fade-in delay-1">Digite seu CEP e descubra os pontos de coleta perto de você</p>
+
+        <div class="busca-form">
+          <div class="busca-input-wrap">
+            <span class="busca-input-icon">📍</span>
+            <input type="text" id="cep-input" placeholder="Digite seu CEP" maxlength="9" inputmode="numeric" />
+          </div>
+          <button class="btn btn-green busca-btn-lg" id="busca-btn">
+            Buscar ponto próximo
+          </button>
+        </div>
+
+        <p id="busca-msg"></p>
+
+        <!-- Cards de exemplo (visíveis antes da busca) -->
+        <div class="result-grid" id="exemplo-cards">
+          <div class="result-card">
+            <div class="result-card-name">EcoPonto Centro</div>
+            <div class="result-card-addr">Avenida Paulista, 100 – Centro<br />São Paulo – SP</div>
+            <button class="btn">Ver no mapa</button>
+          </div>
+          <div class="result-card">
+            <div class="result-card-name">AbapyraTech</div>
+            <div class="result-card-addr">Av. Paulista, 1000 – Bela Vista<br />São Paulo – SP</div>
+            <button class="btn">Ver no mapa</button>
+          </div>
+          <div class="result-card">
+            <div class="result-card-name">GreenStore</div>
+            <div class="result-card-addr">Rua Liberdade, 55 – Liberdade<br />São Paulo – SP</div>
+            <button class="btn">Ver no mapa</button>
+          </div>
+        </div>
+
+        <!-- Mapa (aparece após busca) -->
+        <div id="mapa-wrapper">
+          <iframe id="mapa" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── POR QUE DESCARTAR ── -->
+    <section id="porque">
+      <div class="section-inner">
+        <h2 class="section-title">Por que descartar corretamente?</h2>
+        <p class="section-sub">O descarte adequado dos eletrônicos traz benefícios para todos</p>
+
+        <div class="motivos-grid">
+          <div class="motivo-card">
+            <div class="motivo-icon verde">♻️</div>
+            <h3>Reciclagem de materiais valiosos</h3>
+            <p>Recuperação de metais preciosos e componentes que podem ser reutilizados.</p>
+          </div>
+          <div class="motivo-card">
+            <div class="motivo-icon azul">🌿</div>
+            <h3>Redução da poluição ambiental</h3>
+            <p>Evita contaminação do solo e da água por substâncias nocivas dos eletrônicos.</p>
+          </div>
+          <div class="motivo-card">
+            <div class="motivo-icon roxo">🔒</div>
+            <h3>Destruição correta</h3>
+            <p>Processamento adequado de baterias, circuitos e outros materiais perigosos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── O QUE PODE SER DESCARTADO ── -->
+    <section id="oquepode">
+      <div class="section-inner">
+        <h2 class="section-title">O que pode ser descartado?</h2>
+        <p class="section-sub">Aceitamos diversos tipos de eletrônicos e equipamentos</p>
+
+        <div class="items-grid">
+          <div class="item-card">
+            <div class="ico">📱</div>
+            <span>Celulares quebrados</span>
+          </div>
+          <div class="item-card">
+            <div class="ico">🔌</div>
+            <span>Cabos e carregadores</span>
+          </div>
+          <div class="item-card">
+            <div class="ico">💻</div>
+            <span>Notebooks e tablets</span>
+          </div>
+          <div class="item-card">
+            <div class="ico">🖥️</div>
+            <span>Computadores antigos</span>
+          </div>
+          <div class="item-card">
+            <div class="ico">🔧</div>
+            <span>Peças eletrônicas</span>
+          </div>
+        </div>
+
+        <div class="cta-banner">
+          <div>
+            <strong>🤔 Está em dúvida se pode ser reciclado?</strong>
+            <p>Há várias formas de verificar se determinado equipamento ou dispositivo pode ser reciclado. Consulte a lista completa ou fale com um especialista.</p>
+          </div>
+          <a href="#busca" class="btn btn-green cta-btn">Consultar lista completa</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- /.page-descarte -->
+
+  <footer id="footer"></footer>
+
+  <script src="./js/descarte.js"></script>
+  <script>
+    fetch('includes/header.html')
+      .then(r => r.text())
+      .then(d => document.getElementById('header').innerHTML = d);
+    fetch('includes/footer.html')
+      .then(r => r.text())
+      .then(d => document.getElementById('footer').innerHTML = d);
+  </script>
+</body>
+
+</html>
