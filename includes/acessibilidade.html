@@ -1,0 +1,23 @@
+<!-- Widget de Acessibilidade -->
+<div class="acess-widget" id="acessWidget">
+    <button class="acess-toggle" onclick="toggleAcess()" title="Acessibilidade">♿</button>
+    <div class="acess-painel" id="acessPainel">
+        <h4>Acessibilidade</h4>
+        <div class="acess-item">
+            <span>Tamanho da fonte</span>
+            <div class="acess-botoes">
+                <button onclick="alterarFonte(-1)">A-</button>
+                <button onclick="alterarFonte(1)">A+</button>
+            </div>
+        </div>
+        <div class="acess-item">
+            <span>Alto contraste</span>
+            <button class="acess-toggle-btn" onclick="toggleContraste()" id="btnContraste">Ativar</button>
+        </div>
+        <div class="acess-item">
+            <span>Leitura de tela</span>
+            <button class="acess-toggle-btn" onclick="toggleLeitura()" id="btnLeitura">Ativar</button>
+        </div>
+        <button class="acess-reset" onclick="resetAcess()">Resetar tudo</button>
+    </div>
+</div>

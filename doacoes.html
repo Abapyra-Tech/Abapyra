@@ -40,7 +40,8 @@
         </div>
         <div class="pode-doar-grid">
             <div class="doar-card">
-                <span class="doar-icon"><i class="fa-solid fa-mobile-screen-button" style="color: rgb(34, 197, 94);"></i></span>
+                <span class="doar-icon"><i class="fa-solid fa-mobile-screen-button"
+                        style="color: rgb(34, 197, 94);"></i></span>
                 <h4>Smartphones</h4>
                 <p>Celulares antigos, com defeito ou funcionando</p>
             </div>
@@ -50,7 +51,8 @@
                 <p>Notebooks, netbooks e ultrabooks</p>
             </div>
             <div class="doar-card">
-                <span class="doar-icon"><i class="fa-solid fa-tablet-screen-button" style="color: rgb(34, 197, 94);"></i></span>
+                <span class="doar-icon"><i class="fa-solid fa-tablet-screen-button"
+                        style="color: rgb(34, 197, 94);"></i></span>
                 <h4>Tablets</h4>
                 <p>iPads, tablets Android e e-readers</p>
             </div>
@@ -121,8 +123,8 @@
                         <span>Estudante, 16 anos</span>
                     </div>
                 </div>
-                <p>"Graças ao apoio da Frame Educação, consegui me preparar para o vestibular e hoje estudo Medicina na
-                    universidade."</p>
+                <p>"Recebi um notebook doado pela plataforma e consegui fazer meu primeiro curso de programação. Hoje já
+                    desenvolvo pequenos projetos e sonho em trabalhar com tecnologia."</p>
                 <span class="historia-tag tag-verde">⭐ Aprovada em Medicina</span>
             </div>
             <div class="historia-card">
@@ -133,8 +135,8 @@
                         <span>Estudante, 14 anos</span>
                     </div>
                 </div>
-                <p>"O projeto de tecnologia me ensinou programação e agora sonho em criar aplicativos que ajudem outras
-                    pessoas."</p>
+                <p>"Com o tablet que recebi, passei a estudar eletrônica em casa. Aprendi a consertar celulares e já
+                    ajudo vizinhos do bairro com pequenos reparos."</p>
                 <span class="historia-tag tag-laranja">&lt;/&gt; Futuro Programador</span>
             </div>
             <div class="historia-card">
@@ -145,8 +147,8 @@
                         <span>Professora</span>
                     </div>
                 </div>
-                <p>"A capacitação que recebi transformou minha forma de ensinar. Agora posso oferecer aulas mais
-                    dinâmicas e efetivas."</p>
+                <p>"A Abapyra Tech doou computadores para nossa escola pública. Hoje consigo dar aulas práticas de
+                    informática para mais de 60 alunos que nunca tinham tocado em um computador."</p>
                 <span class="historia-tag tag-laranja">🎓 Educadora Capacitada</span>
             </div>
         </div>
@@ -163,28 +165,32 @@
         <div class="outras-grid">
 
             <div class="outras-card">
-                <div class="outras-icon" style="background:#dbeafe;"><i class="fa-solid fa-handshake" style="color: rgb(2, 132, 199);"></i></div>
+                <div class="outras-icon" style="background:#dbeafe;"><i class="fa-solid fa-handshake"
+                        style="color: rgb(2, 132, 199);"></i></div>
                 <h4>Voluntariado</h4>
                 <p>Doe seu tempo e conhecimento para ensinar e mentorear estudantes.</p>
                 <a href="#">Saiba mais</a>
             </div>
 
             <div class="outras-card">
-                <div class="outras-icon" style="background:#fff7ed;"><i class="fa-solid fa-share-nodes" style="color: rgb(217, 119, 6);"></i></div>
+                <div class="outras-icon" style="background:#fff7ed;"><i class="fa-solid fa-share-nodes"
+                        style="color: rgb(217, 119, 6);"></i></div>
                 <h4>Divulgação</h4>
                 <p>Compartilhe nossa causa nas redes sociais e ajude a alcançar mais pessoas.</p>
                 <a href="#">Compartilhar</a>
             </div>
 
             <div class="outras-card">
-                <div class="outras-icon" style="background:#dcfce7;"><i class="fa-solid fa-building" style="color: rgb(22, 163, 74);"></i></div>
+                <div class="outras-icon" style="background:#dcfce7;"><i class="fa-solid fa-building"
+                        style="color: rgb(22, 163, 74);"></i></div>
                 <h4>Parcerias</h4>
                 <p>Empresas podem se tornar parceiras e apoiar nossos projetos educacionais.</p>
                 <a href="#">Ser parceiro</a>
             </div>
 
             <div class="outras-card">
-                <div class="outras-icon" style="background:#f3e8ff;"><i class="fa-solid fa-gift" style="color: rgb(147, 51, 234);"></i></div>
+                <div class="outras-icon" style="background:#f3e8ff;"><i class="fa-solid fa-gift"
+                        style="color: rgb(147, 51, 234);"></i></div>
                 <h4>Doação de Materiais</h4>
                 <p>Livros, equipamentos e materiais escolares são sempre bem-vindos.</p>
                 <a href="#">Doar materiais</a>
@@ -195,13 +201,34 @@
 
     <footer id="footer"></footer>
 
+    <!-- Acessibilidade -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script src="./js/acessibilidade.js"></script>
+
     <script>
         fetch('includes/header.html')
             .then(r => r.text())
             .then(d => document.getElementById('header').innerHTML = d);
+
         fetch('includes/footer.html')
             .then(r => r.text())
             .then(d => document.getElementById('footer').innerHTML = d);
+
+        fetch('includes/acessibilidade.html')
+            .then(r => r.text())
+            .then(d => {
+                const div = document.createElement('div');
+                div.innerHTML = d;
+                document.body.appendChild(div);
+            });
     </script>
 </body>
 </html>

@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="hero-img">
-            <img src="./Imagens/criancas-tecnologia.png" alt="Crianças usando tecnologia" />
+            <img src="./Imagens/criancas-usando-tecnologia.png" alt="Crianças usando tecnologia" />
         </div>
     </section>
 
@@ -36,22 +36,22 @@
         </div>
         <div class="como-grid">
             <div class="como-card">
-                <div class="como-icon">👤</div>
+                <div class="como-icon"><i class="fa-solid fa-user-plus" style="color: rgb(255, 255, 255);"></i></div>
                 <h4>1. Cadastro</h4>
                 <p>Doadores cadastram eletrônicos disponíveis</p>
             </div>
             <div class="como-card">
-                <div class="como-icon">📋</div>
+                <div class="como-icon"><i class="fa-solid fa-list" style="color: rgb(255, 255, 255);"></i></div>
                 <h4>2. Solicitação</h4>
                 <p>Documentação aprovados solicitam equipamentos</p>
             </div>
             <div class="como-card">
-                <div class="como-icon">📦</div>
+                <div class="como-icon"><i class="fa-solid fa-box" style="color: rgb(255, 255, 255);"></i></div>
                 <h4>3. Envio</h4>
                 <p>Equipamentos são enviados ou retirados</p>
             </div>
             <div class="como-card">
-                <div class="como-icon">🎓</div>
+                <div class="como-icon"><i class="fa-solid fa-graduation-cap" style="color: rgb(255, 255, 255);"></i></div>
                 <h4>4. Transformação</h4>
                 <p>Eletrônicos se transformam em aprendizado</p>
             </div>
@@ -127,7 +127,7 @@
         </div>
         <div class="projetos-grid">
             <div class="projeto-card">
-                <img src="./Imagens/projeto1.png" alt="Instituto Robótica Social" />
+                <img src="./Imagens/instituto-robotica.png" alt="Instituto Robótica Social" />
                 <div class="projeto-body">
                     <h4>Instituto Robótica Social</h4>
                     <span class="projeto-local">📍 São Paulo, SP</span>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="projeto-card">
-                <img src="./Imagens/projeto2.png" alt="TechKids" />
+                <img src="./Imagens/instituto-robotica.png" alt="TechKids" />
                 <div class="projeto-body">
                     <h4>TechKids</h4>
                     <span class="projeto-local">📍 São Paulo, SP</span>
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="projeto-card">
-                <img src="./Imagens/projeto3.png" alt="Instituto Robótica Social" />
+                <img src="./Imagens/instituto-robotica.png" alt="Instituto Robótica Social" />
                 <div class="projeto-body">
                     <h4>Instituto Robótica Social</h4>
                     <span class="projeto-local">📍 São Paulo, SP</span>
@@ -254,13 +254,34 @@
 
     <footer id="footer"></footer>
 
-    <script>
-        fetch('includes/header.html')
-            .then(r => r.text())
-            .then(d => document.getElementById('header').innerHTML = d);
-        fetch('includes/footer.html')
-            .then(r => r.text())
-            .then(d => document.getElementById('footer').innerHTML = d);
-    </script>
+    <!-- Acessibilidade -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+  <script src="./js/acessibilidade.js"></script>
+
+  <script>
+    fetch('includes/header.html')
+      .then(r => r.text())
+      .then(d => document.getElementById('header').innerHTML = d);
+
+    fetch('includes/footer.html')
+      .then(r => r.text())
+      .then(d => document.getElementById('footer').innerHTML = d);
+
+    fetch('includes/acessibilidade.html')
+      .then(r => r.text())
+      .then(d => {
+        const div = document.createElement('div');
+        div.innerHTML = d;
+        document.body.appendChild(div);
+      });
+  </script>
 </body>
 </html>

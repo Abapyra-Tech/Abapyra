@@ -1,29 +1,32 @@
-const track   = document.getElementById('track');
-const cards   = track.querySelectorAll('.card');
-const prev    = document.getElementById('prev');
-const next    = document.getElementById('next');
+const track = document.getElementById('carrossel');
+const cards = document.querySelectorAll('.curso-card');
+const dotsContainer = document.getElementById('dots');
 
-let current = 0;
+const visiveis = 3;
+let atual = 0;
+const total = cards.length - visiveis + 1;
 
-function perView() {
-  if (window.innerWidth <= 560) return 1;
-  if (window.innerWidth <= 900) return 2;
-  return 3;
+// Cria dots
+for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('ativo');
+    dot.onclick = () => irPara(i);
+    dotsContainer.appendChild(dot);
 }
 
-function goTo(idx) {
-  const max = cards.length - perView();
-  current = Math.max(0, Math.min(idx, max));
+function irPara(index) {
+    atual = Math.max(0, Math.min(index, total - 1));
 
-  const cardWidth = cards[0].offsetWidth + 20;
-  track.style.transform = `translateX(-${current * cardWidth}px)`;
+    // Calcula largura real do card + gap em tempo de execução
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${atual * cardWidth}px)`;
 
-  prev.disabled = current === 0;
-  next.disabled = current >= max;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('ativo', i === atual);
+    });
 }
 
-prev.addEventListener('click', () => goTo(current - 1));
-next.addEventListener('click', () => goTo(current + 1));
-window.addEventListener('resize', () => goTo(current));
-
-goTo(0);
+function moverCarrossel(direcao) {
+    irPara(atual + direcao);
+}

@@ -82,6 +82,7 @@ body {
 }
 
 .como-header h2 {
+    color: #1F2937;
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -194,7 +195,8 @@ body {
 /* ── PROJETOS ── */
 .projetos {
     padding: 70px 8%;
-    background: #1F2937;
+    background-image: url("../Imagens/bacground-servicos.png");
+    background-size: cover;
     color: #ffffff;
 }
 
@@ -267,7 +269,7 @@ body {
 }
 
 .projeto-card {
-    background: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 14px;
     overflow: hidden;
     color: #1a1a1a;

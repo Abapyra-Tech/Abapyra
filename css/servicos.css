@@ -275,13 +275,3 @@ body {
 }
 
 .submit:hover { background: #16a34a; }
-
-/* ── RESPONSIVO ── */
-@media (max-width: 768px) {
-  .hero { flex-direction: column; padding: 48px 24px; }
-  .hero-img img { width: 100%; }
-  .busca, .cadastro { padding: 48px 24px; }
-  .form-wrap { padding: 24px 20px; }
-  #mapa { height: 300px; }
-}
-
