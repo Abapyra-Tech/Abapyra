@@ -33,7 +33,7 @@ A **Abapyra Tech** transforma o problema do lixo eletrônico em oportunidade de 
 | Cor de destaque | `#f97316` — laranja |
 | Fundo escuro | `#1F2937` |
 | Fundo verde escuro | `#0d2318` |
-| Fonte títulos | Syne (Google Fonts) |
+| Fonte títulos | Jomhuria (Google Fonts) |
 | Fonte corpo | Arial, sans-serif |
 
 ---
