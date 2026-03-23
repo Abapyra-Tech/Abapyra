@@ -89,32 +89,45 @@ A **Abapyra Tech** transforma o problema do lixo eletrônico em oportunidade de 
    Obrigada por visitar o nosso repositório, caso queira se conectar com a gente, estamos disponíveis através do LinkedIn!
 
   **Maria Eduarda:**
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maria-alves-12bb031ab/)
+  
+<a href="https://www.linkedin.com/in/maria-alves-12bb031ab/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
   **Kauanny dos Anjos:**
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kauannyanjos/)
+  
+<a href="https://www.linkedin.com/in/kauannyanjos/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
   **Jeferson Vinicius:**
 
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kayk-junior-317176245/)
+<a href="https://www.linkedin.com/in/shoggo/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
   **Gustavo Henrique:**
 
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shoggo/)
+<a href="https://www.linkedin.com/in/shoggo/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
   **Kawan Turchiai:**
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kawanturchiai/)
+https://www.linkedin.com/in/shoggo/
+<a href="https://www.linkedin.com/in/kawanturchiai/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
   **Maria Luiza:**
 
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maria-luiza-cortez/)
+<a href="https://www.linkedin.com/in/maria-luiza-cortez/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
   **Kayk Junior:**
-
-[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kayk-trindade-317176245/)
-
+  
+<a href="https://www.linkedin.com/in/kayk-trindade-317176245/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
 
 *© 2026 Abapyra Tech. Todos os direitos reservados.*
