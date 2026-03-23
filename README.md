@@ -113,7 +113,7 @@ A **Abapyra Tech** transforma o problema do lixo eletrônico em oportunidade de 
 </a>
 
   **Kawan Turchiai:**
-https://www.linkedin.com/in/shoggo/
+
 <a href="https://www.linkedin.com/in/kawanturchiai/" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
