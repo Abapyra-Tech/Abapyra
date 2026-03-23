@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
 
 * {
     margin: 0;
@@ -45,6 +46,7 @@ nav {
 }
 
 .nav-links {
+    
     display: flex;
     align-items: center;
     gap: 30px;
@@ -53,10 +55,11 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Jomhuria', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
     transition: color .2s;
+    color: #fff;
 }
 
 .nav-links a:hover {
@@ -66,6 +69,20 @@ nav {
 .nav-actions {
     display: flex;
     gap: 10px;
+}
+
+.nav-actions.aberto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: var(--azul-escuro);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 0 20px 24px;
+    z-index: 999;
 }
 
 .btn {
@@ -833,4 +850,208 @@ body.leitura-ativa select,
 body.leitura-ativa textarea {
     outline: 2px dashed #f97316;
     outline-offset: 2px;
+}
+
+.acess-toggle i {
+    color: #ffffff;
+}
+
+/* ── RESPONSIVO ── */
+
+/* ── MENU TOGGLE ── */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+/* ── RESPONSIVO ── */
+
+@media (max-width: 1024px) {
+    .como-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cultura-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem img {
+        width: 100%;
+    }
+
+    .pilares-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        padding: 0 20px;
+        height: 70px;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        background-color: var(--azul-escuro);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 24px 20px;
+        z-index: 999;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links.aberto {
+        display: flex;
+    }
+
+    .nav-actions {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-logo .logo img {
+    width: 50px;
+    height: 45px;
+}
+
+.logo-name img {
+    height: 18px;
+}
+
+    /* HOME */
+    .home {
+        flex-direction: column;
+        padding: 60px 6%;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .fooder-texto {
+        max-width: 100%;
+    }
+
+    .fooder-texto h1 {
+        font-size: 32px;
+    }
+
+    .botoes {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .fooder-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* SERVIÇOS */
+    .servicos {
+        padding: 48px 20px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* SOBRE */
+    .sobre-logo img {
+        width: 220px;
+    }
+
+    .pilares-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* COMO TRABALHAMOS */
+    .como-trabalhamos {
+        padding: 48px 20px;
+    }
+
+    .como-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    /* CULTURA */
+    .cultura-container {
+        flex-direction: column;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .imagem img {
+        width: 100%;
+    }
+
+    .texto {
+        max-width: 100%;
+    }
+
+    /* IMPACTO */
+    .conteudoImpacto {
+        gap: 40px;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .fooder-texto h1 {
+        font-size: 26px;
+    }
+
+    .como-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudoImpacto {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botoes a {
+        width: 100%;
+        text-align: center;
+    }
 }
