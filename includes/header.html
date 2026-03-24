@@ -4,7 +4,7 @@
     <span class="logo-name"><img src="../Imagens/Abapyra Tech.png" alt=""></span>
   </a>
 
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Início</a></li>
     <li><a href="servicos.html">Serviços</a></li>
     <li><a href="marketplace.html">Marketplace</a></li>
@@ -12,9 +12,40 @@
     <li><a href="doacoes.html">Doe e Descarte</a></li>
   </ul>
 
-  <div class="nav-actions">
+  <div class="nav-actions" id="navActions">
     <a href="#" class="btn btn-outline" onclick="abrirModal('login'); return false;">Entrar</a>
     <a href="#" class="btn btn-primary" onclick="abrirModal('cadastro'); return false;">Cadastrar</a>
   </div>
   
 </nav>
+
+  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('aberto');
+    document.getElementById('navActions').classList.toggle('aberto');
+  }
+
+  // Fecha o menu ao clicar em um link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('aberto');
+      document.getElementById('navActions').classList.remove('aberto');
+    });
+  });
+
+  fetch('includes/auth.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('beforeend', html);
+      const s = document.createElement('script');
+      s.src = 'js/auth.js';
+      document.body.appendChild(s);
+    });
+</script>

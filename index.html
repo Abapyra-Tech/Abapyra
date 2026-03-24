@@ -117,7 +117,7 @@
       <div class="pilares-grid">
         <div class="pilar-card">
           <div class="pilar-topo">
-            <div class="pilar-icon">🧭</div>
+            <div class="pilar-icon"><i class="fa-solid fa-clock" style="color: rgb(255, 255, 255);"></i></div>
             <h3>Missão</h3>
           </div>
           <p>Desenvolver soluções tecnológicas inovadoras que conectem empresas e pessoas, promovendo transformação
@@ -126,7 +126,7 @@
 
         <div class="pilar-card">
           <div class="pilar-topo">
-            <div class="pilar-icon">👁️</div>
+            <div class="pilar-icon"><i class="fa-solid fa-eye" style="color: rgb(255, 255, 255);"></i></div>
             <h3>Visão</h3>
           </div>
           <p>Ser referência em inovação tecnológica no Brasil, reconhecida por criar soluções que respeitam nossa
@@ -135,7 +135,7 @@
 
         <div class="pilar-card">
           <div class="pilar-topo">
-            <div class="pilar-icon">🤍</div>
+            <div class="pilar-icon"><i class="fa-solid fa-heart" style="color: rgb(255, 255, 255);"></i></div>
             <h3>Valores</h3>
           </div>
           <ul class="valores-lista">
@@ -303,6 +303,10 @@
       .then(d => {
         document.body.insertAdjacentHTML('beforeend', d);
       });
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('aberto');
+        document.getElementById('navActions').classList.toggle('aberto');
+    }  
   </script>
 </body>
 </html>

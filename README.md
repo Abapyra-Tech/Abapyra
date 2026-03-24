@@ -2,7 +2,7 @@
 
 Plataforma web voltada para a sustentabilidade tecnológica, conectando pessoas, técnicos e projetos sociais para reaproveitar eletrônicos e reduzir o lixo eletrônico.
 
-<img width="1883" height="952" alt="Captura de tela 2026-03-22 221754" src="https://github.com/user-attachments/assets/fba81324-6693-4bc6-ac27-957e42caa8e2" />
+<img width="941" height="476" alt="Captura de tela 2026-03-23 204232" src="https://github.com/user-attachments/assets/858b4c8b-e8d9-41fa-bf76-8c2d86a4441c" />
 
 ---
 
@@ -33,7 +33,7 @@ A **Abapyra Tech** transforma o problema do lixo eletrônico em oportunidade de 
 | Cor de destaque | `#f97316` — laranja |
 | Fundo escuro | `#1F2937` |
 | Fundo verde escuro | `#0d2318` |
-| Fonte títulos | Syne (Google Fonts) |
+| Fonte títulos | Jomhuria (Google Fonts) |
 | Fonte corpo | Arial, sans-serif |
 
 ---
@@ -102,7 +102,7 @@ A **Abapyra Tech** transforma o problema do lixo eletrônico em oportunidade de 
 
   **Jeferson Vinicius:**
 
-<a href="https://www.linkedin.com/in/shoggo/" target="_blank">
+<a href="https://www.linkedin.com/in/jeferson-vinicius-230aa2128/" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 
