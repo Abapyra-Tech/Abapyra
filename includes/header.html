@@ -16,15 +16,5 @@
     <a href="#" class="btn btn-outline" onclick="abrirModal('login'); return false;">Entrar</a>
     <a href="#" class="btn btn-primary" onclick="abrirModal('cadastro'); return false;">Cadastrar</a>
   </div>
+  
 </nav>
-
-<script>
-  fetch('includes/auth.html')
-    .then(r => r.text())
-    .then(html => {
-      document.body.insertAdjacentHTML('beforeend', html);
-      const s = document.createElement('script');
-      s.src = 'js/auth.js';
-      document.body.appendChild(s);
-    });
-</script>
