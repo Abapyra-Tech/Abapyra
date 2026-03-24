@@ -66,6 +66,10 @@ nav {
     color: var(--laranja-claro);
 }
 
+.nav-links a.ativo {
+    color: var(--laranja-claro);
+}
+
 .nav-actions {
     display: flex;
     gap: 10px;

@@ -27,7 +27,7 @@
       </p>
       <div class="botoes">
         <a href="#" class="botao-laranja">Conheça nossas soluções</a>
-        <a href="#" class="botao-verde">Sobre nós</a>
+        <a href="sobre" class="botao-verde">Sobre nós</a>
       </div>
     </div>
 
@@ -96,7 +96,7 @@
   </section>
 
   <!-- SOBRE NÓS -->
-  <section class="sobre">
+  <section id="sobre" class="sobre">
 
     <div class="sobre-logo">
       <img src="./Imagens/logo-com-texto.png" alt="Abapyra Tech" />
@@ -283,7 +283,24 @@
   <script>
     fetch('includes/header.html')
       .then(r => r.text())
-      .then(d => document.getElementById('header').innerHTML = d);
+      .then(d => {
+        document.getElementById('header').innerHTML = d;
+
+        // Marca link ativo APÓS o header carregar
+        const pagina = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          const href = link.getAttribute('href').split('/').pop();
+          if (href === pagina) {
+            link.classList.add('ativo');
+          }
+        });
+
+        // Hamburguer APÓS o header carregar
+        const menuToggle = document.getElementById('menuToggle');
+        if (menuToggle) {
+          menuToggle.addEventListener('click', toggleMenu);
+        }
+      });
 
     fetch('includes/footer.html')
       .then(r => r.text())
@@ -298,9 +315,10 @@
       });
 
     function toggleMenu() {
-        document.getElementById('navLinks').classList.toggle('aberto');
-        document.getElementById('navActions').classList.toggle('aberto');
-    }  
+      document.getElementById('navLinks').classList.toggle('aberto');
+      document.getElementById('navActions').classList.toggle('aberto');
+    }
   </script>
 </body>
+
 </html>
