@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
         <h2>Encontre técnicos <span class="laranja">próximos</span></h2>
         <p>Digite seu CEP para encontrar profissionais qualificados na sua região.</p>
 
-        <div class="busca-box">
+        <div id="busca-cep" class="busca-box">
             <div class="input-wrap">
                 <span aria-hidden="true">📍</span>
                 <input type="text" id="cep-input" placeholder="Digite o seu CEP" maxlength="9"
@@ -122,13 +123,14 @@
             <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
-    
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
     <script src="./js/acessibilidade.js"></script>
 
     <script src="./js/servicos.js"></script>
+
     <script>
         fetch('includes/header.html')
             .then(r => r.text())
@@ -136,15 +138,14 @@
                 document.getElementById('header').innerHTML = d;
 
                 // Marca link ativo APÓS o header carregar
-                const pagina = window.location.pathname.split('/').pop() || 'index.html';
+                const pagina = window.location.pathname.split('/').pop();
                 document.querySelectorAll('.nav-links a').forEach(link => {
                     const href = link.getAttribute('href').split('/').pop();
                     if (href === pagina) {
                         link.classList.add('ativo');
                     }
                 });
-
-                // Hamburguer APÓS o header carregar
+                // Hamburguer
                 const menuToggle = document.getElementById('menuToggle');
                 if (menuToggle) {
                     menuToggle.addEventListener('click', toggleMenu);
@@ -170,4 +171,5 @@
     </script>
 
 </body>
+
 </html>
