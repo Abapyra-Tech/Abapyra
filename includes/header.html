@@ -1,7 +1,7 @@
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="logo"><img src="../Imagens/abapyra-logo.png" alt="logo-abapyra"></div>
-    <span class="logo-name"><img src="../Imagens/Abapyra Tech.png" alt=""></span>
+    <span class="logo-name">Abapyra Tech</span>
   </a>
 
   <ul class="nav-links" id="navLinks">
@@ -19,7 +19,7 @@
   
 </nav>
 
-  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+  <button class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
     <span></span>
@@ -27,19 +27,6 @@
 </nav>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('aberto');
-    document.getElementById('navActions').classList.toggle('aberto');
-  }
-
-  // Fecha o menu ao clicar em um link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('aberto');
-      document.getElementById('navActions').classList.remove('aberto');
-    });
-  });
-
   fetch('includes/auth.html')
     .then(r => r.text())
     .then(html => {

@@ -269,10 +269,11 @@ body {
 }
 
 .projeto-card {
-    border: 1px solid rgb(255, 255, 255);
+    background: #1A2F29;
     border-radius: 14px;
     overflow: hidden;
-    color: #1a1a1a;
+    color: #ffffff;
+    font-family: sans-serif;
 }
 
 .projeto-card img {
@@ -296,6 +297,7 @@ body {
 .projeto-local {
     font-size: 0.8rem;
     color: #f97316;
+    font-family: sans-serif;
 }
 
 .projeto-tags {
@@ -305,21 +307,22 @@ body {
 
 .tag {
     font-size: 0.75rem;
-    background: #e5e7eb;
     border-radius: 100px;
     padding: 3px 10px;
-    color: #374151;
+    color: #ffffff;
+    font-family: sans-serif;
 }
 
 .projeto-alunos {
     font-size: 0.8rem;
-    color: #6b7280;
+    color: #ffffff;
+    font-family: sans-serif;
 }
 
 .btn-projeto {
     display: block;
     text-align: center;
-    background: #22c55e;
+    background: #154E31;
     color: #fff;
     border-radius: 8px;
     padding: 10px;

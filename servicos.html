@@ -33,16 +33,11 @@
         <h2>Encontre técnicos <span class="laranja">próximos</span></h2>
         <p>Digite seu CEP para encontrar profissionais qualificados na sua região.</p>
 
-        <div class="busca-box">
+        <div id="busca-cep" class="busca-box">
             <div class="input-wrap">
                 <span aria-hidden="true">📍</span>
-                <input 
-                    type="text" 
-                    id="cep-input" 
-                    placeholder="Digite o seu CEP" 
-                    maxlength="9"
-                    aria-label="Campo para digitar CEP"
-                    autocomplete="postal-code" />
+                <input type="text" id="cep-input" placeholder="Digite o seu CEP" maxlength="9"
+                    aria-label="Campo para digitar CEP" autocomplete="postal-code" />
             </div>
             <button id="busca-btn" class="busca-btn" aria-label="Botão para buscar técnicos">🔍 Buscar</button>
         </div>
@@ -50,11 +45,7 @@
         <p id="busca-msg" class="busca-msg" role="alert" aria-live="polite"></p>
 
         <div id="mapa-wrapper" class="mapa-wrapper" hidden>
-            <iframe 
-                id="mapa" 
-                src="" 
-                title="Mapa mostrando localização e técnicos próximos"
-                loading="lazy" 
+            <iframe id="mapa" src="" title="Mapa mostrando localização e técnicos próximos" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
@@ -63,7 +54,7 @@
     <!-- CADASTRO -->
     <section class="cadastro" aria-label="Seção de cadastro para técnicos">
         <div class="cadastro-topo">
-            
+
             <h2>Cadastre-se como <span class="laranja">Técnico🔧</span></h2>
             <p>Faça parte da nossa rede de profissionais e aumente seus ganhos.</p>
         </div>
@@ -97,39 +88,25 @@
             <h3>Formulário para cadastro</h3>
             <form id="cadastro-form" class="form" novalidate>
                 <div class="field">
-                    <span aria-hidden="true"><i class="fa-slab-press fa-regular fa-user" style="color: rgb(249, 115, 22);"></i></span>
-                    <input 
-                        type="text" 
-                        name="nome" 
-                        placeholder="Nome completo" 
-                        required
+                    <span aria-hidden="true"><i class="fa-slab-press fa-regular fa-user"
+                            style="color: rgb(249, 115, 22);"></i></span>
+                    <input type="text" name="nome" placeholder="Nome completo" required
                         aria-label="Campo de nome completo" />
                 </div>
                 <div class="field">
-                    <span aria-hidden="true"><i class="fa-solid fa-map-pin" style="color: rgb(249, 115, 22);"></i></span>
-                    <input 
-                        type="text" 
-                        name="cep" 
-                        placeholder="CEP/Bairro" 
-                        required
+                    <span aria-hidden="true"><i class="fa-solid fa-map-pin"
+                            style="color: rgb(249, 115, 22);"></i></span>
+                    <input type="text" name="cep" placeholder="CEP/Bairro" required
                         aria-label="Campo de CEP ou bairro" />
                 </div>
                 <div class="field">
                     <span aria-hidden="true"><i class="fa-solid fa-wrench" style="color: rgb(249, 115, 22);"></i></span>
-                    <input 
-                        type="text" 
-                        name="especialidade" 
-                        placeholder="Especialidade" 
-                        required
+                    <input type="text" name="especialidade" placeholder="Especialidade" required
                         aria-label="Campo de especialidade" />
                 </div>
                 <div class="field">
                     <span aria-hidden="true"><i class="fa-solid fa-mobile" style="color: rgb(249, 115, 22);"></i></span>
-                    <input 
-                        type="email" 
-                        name="contato" 
-                        placeholder="E-mail ou telefone" 
-                        required
+                    <input type="email" name="contato" placeholder="E-mail ou telefone" required
                         aria-label="Campo de informações de contato" />
                 </div>
                 <button type="submit" class="submit">Enviar</button>
@@ -138,21 +115,19 @@
     </section>
 
     <footer id="footer"></footer>
-    
-    <script src="./js/servicos.js"></script>
 
     <!-- Acessibilidade -->
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
     </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
   <script src="./js/acessibilidade.js"></script>
-  <script src="./js/auth.js"></script>
 
   <script>
     fetch('includes/header.html')
@@ -170,13 +145,8 @@
         div.innerHTML = d;
         document.body.appendChild(div);
       });
-
-    fetch('includes/auth.html')
-      .then(r => r.text())
-      .then(d => {
-        document.body.insertAdjacentHTML('beforeend', d);
-      });
   </script>
 
 </body>
+
 </html>
