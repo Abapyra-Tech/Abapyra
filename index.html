@@ -286,6 +286,7 @@
       .then(r => r.text())
       .then(d => {
         document.getElementById('header').innerHTML = d;
+        console.log('Header carregado com sucesso');
 
         // Marca link ativo APÓS o header carregar
         const pagina = window.location.pathname.split('/').pop();
@@ -293,6 +294,8 @@
           const href = link.getAttribute('href').split('/').pop();
           if (href === pagina) {
             link.classList.add('ativo');
+            console.log('Link marcado como ativo:', link);
+                        console.log(link);
           }
         });
 

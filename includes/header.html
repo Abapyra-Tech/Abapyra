@@ -33,13 +33,4 @@
       s.src = 'js/auth.js';
       document.body.appendChild(s);
     });
-
-  // Marca link ativo APÓS o header carregar
-        const pagina = window.location.pathname.split('/').pop();
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          const href = link.getAttribute('href').split('/').pop();
-          if (href === pagina) {
-            link.classList.add('ativo');
-          }
-        });  
 </script>

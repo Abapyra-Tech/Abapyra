@@ -6,8 +6,6 @@ body {
   padding: 0;
 }
 
-.laranja { color: #f97316; }
-
 /* ── HERO ── */
 .hero {
   display: flex;
