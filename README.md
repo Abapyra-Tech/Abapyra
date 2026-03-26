@@ -2,7 +2,7 @@
 
 Plataforma web voltada para a sustentabilidade tecnológica, conectando pessoas, técnicos e projetos sociais para reaproveitar eletrônicos e reduzir o lixo eletrônico.
 
-<img width="941" height="476" alt="Captura de tela 2026-03-23 204232" src="https://github.com/user-attachments/assets/858b4c8b-e8d9-41fa-bf76-8c2d86a4441c" />
+<img width="1891" height="813" alt="image" src="https://github.com/user-attachments/assets/4fefa19a-81d5-42d0-8377-0975706f2507" />
 
 ---
 

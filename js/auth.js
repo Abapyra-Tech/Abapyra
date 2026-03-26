@@ -1,150 +1,195 @@
-/* ══════════════════════════════
-   AUTH MODAL — auth.js
-   ══════════════════════════════ */
+/* ================================================
+   ABAPYRA TECH — Lógica do Modal de Autenticação
+   Arquivo: js/auth.js
+   ================================================ */
 
-// ── Abre o modal na aba desejada ──
+/* ── Abrir modal ── */
 function abrirModal(aba = 'login') {
-  const overlay = document.getElementById('modal-auth');
-  if (!overlay) return;
+  const overlay = document.getElementById('auth-overlay');
+  console.log('abrirModal chamado, overlay:', overlay);
+
+  // Se o modal ainda não foi injetado pelo fetch, tenta novamente
+  if (!overlay) {
+    console.log('Overlay não encontrado, tentando novamente em 100ms');
+    setTimeout(() => abrirModal(aba), 100);
+    return;
+  }
+
+  console.log('Abrindo modal - removendo hidden e adicionando ativo');
+  overlay.removeAttribute('hidden');
   overlay.classList.add('ativo');
+  document.body.style.overflow = 'hidden';
   trocarAba(aba);
-  document.body.style.overflow = 'hidden'; // trava o scroll da página
+
+  setTimeout(() => {
+    const primeiro = overlay.querySelector('.auth-painel.active input');
+    if (primeiro) primeiro.focus();
+  }, 300);
 }
 
-// ── Fecha o modal ──
+/* ── Fechar modal ── */
 function fecharModal() {
-  const overlay = document.getElementById('modal-auth');
+  const overlay = document.getElementById('auth-overlay');
   if (!overlay) return;
   overlay.classList.remove('ativo');
-  document.body.style.overflow = ''; // libera o scroll
-  limparErros();
+  document.body.style.overflow = '';
+  limparMensagens();
 }
 
-// ── Troca entre as abas Login / Cadastro ──
-function trocarAba(aba) {
-  const formLogin    = document.getElementById('form-login');
-  const formCadastro = document.getElementById('form-cadastro');
-  const tabs         = document.querySelectorAll('.tab');
-
-  formLogin.classList.toggle('hidden', aba !== 'login');
-  formCadastro.classList.toggle('hidden', aba !== 'cadastro');
-
-  tabs.forEach((tab, i) => {
-    tab.classList.toggle('ativo',
-      (i === 0 && aba === 'login') ||
-      (i === 1 && aba === 'cadastro')
-    );
-  });
-
-  limparErros();
-}
-
-// ── Validação e submit do Login ──
-function submeterLogin() {
-  const email = document.getElementById('login-email');
-  const senha = document.getElementById('login-senha');
-  let valido = true;
-
-  limparErros();
-
-  if (!email.value || !email.value.includes('@')) {
-    marcarErro(email, 'E-mail inválido');
-    valido = false;
-  }
-
-  if (!senha.value || senha.value.length < 6) {
-    marcarErro(senha, 'Senha deve ter ao menos 6 caracteres');
-    valido = false;
-  }
-
-  if (!valido) return;
-
-  // ✅ Aqui você conecta com seu backend / Firebase / etc.
-  console.log('Login:', { email: email.value, senha: senha.value });
-  mostrarMensagem('form-login', 'Login realizado com sucesso!', 'sucesso');
-}
-
-// ── Validação e submit do Cadastro ──
-function submeterCadastro() {
-  const nome      = document.getElementById('cadastro-nome');
-  const email     = document.getElementById('cadastro-email');
-  const senha     = document.getElementById('cadastro-senha');
-  const confirmar = document.getElementById('cadastro-confirmar');
-  let valido = true;
-
-  limparErros();
-
-  if (!nome.value.trim()) {
-    marcarErro(nome, 'Informe seu nome');
-    valido = false;
-  }
-
-  if (!email.value || !email.value.includes('@')) {
-    marcarErro(email, 'E-mail inválido');
-    valido = false;
-  }
-
-  if (!senha.value || senha.value.length < 6) {
-    marcarErro(senha, 'Senha deve ter ao menos 6 caracteres');
-    valido = false;
-  }
-
-  if (confirmar.value !== senha.value) {
-    marcarErro(confirmar, 'As senhas não coincidem');
-    valido = false;
-  }
-
-  if (!valido) return;
-
-  // ✅ Aqui você conecta com seu backend / Firebase / etc.
-  console.log('Cadastro:', { nome: nome.value, email: email.value });
-  mostrarMensagem('form-cadastro', 'Conta criada com sucesso!', 'sucesso');
-}
-
-// ── Marca campo com erro ──
-function marcarErro(input, mensagem) {
-  input.classList.add('erro');
-
-  const msg = document.createElement('span');
-  msg.className = 'campo-erro';
-  msg.style.cssText = 'color:#ef4444; font-size:0.75rem; margin-top:-6px;';
-  msg.textContent = mensagem;
-
-  input.insertAdjacentElement('afterend', msg);
-}
-
-// ── Mostra mensagem geral no formulário ──
-function mostrarMensagem(formId, texto, tipo) {
-  const form = document.getElementById(formId);
-  let msg = form.querySelector('.modal-msg');
-
-  if (!msg) {
-    msg = document.createElement('div');
-    msg.className = 'modal-msg';
-    form.appendChild(msg);
-  }
-
-  msg.textContent = texto;
-  msg.className = `modal-msg ${tipo}`;
-}
-
-// ── Limpa todos os erros ──
-function limparErros() {
-  document.querySelectorAll('.modal-form input').forEach(i => i.classList.remove('erro'));
-  document.querySelectorAll('.campo-erro').forEach(e => e.remove());
-  document.querySelectorAll('.modal-msg').forEach(m => {
-    m.className = 'modal-msg';
-    m.textContent = '';
-  });
-}
-
-// ── Fecha clicando fora do box ──
+/* ── Fechar ao clicar no overlay (fora do modal) ── */
 document.addEventListener('click', function (e) {
-  const overlay = document.getElementById('modal-auth');
+  const overlay = document.getElementById('auth-overlay');
   if (e.target === overlay) fecharModal();
 });
 
-// ── Fecha com tecla ESC ──
+/* ── Fechar com tecla ESC ── */
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') fecharModal();
 });
+
+/* ── Trocar aba (Login / Cadastro) ── */
+function trocarAba(aba) {
+  const paineis   = document.querySelectorAll('.auth-painel');
+  const abas      = document.querySelectorAll('.auth-tab');
+  const indicador = document.getElementById('tab-indicator');
+
+  paineis.forEach(p => p.classList.remove('active'));
+  abas.forEach(a => {
+    a.classList.remove('active');
+    a.setAttribute('aria-selected', 'false');
+  });
+
+  document.getElementById('painel-' + aba).classList.add('active');
+  const tabAtiva = document.getElementById('tab-' + aba);
+  tabAtiva.classList.add('active');
+  tabAtiva.setAttribute('aria-selected', 'true');
+
+  // Move o indicador deslizante
+  if (indicador) {
+    indicador.style.transform = aba === 'cadastro' ? 'translateX(100%)' : 'translateX(0)';
+  }
+
+  limparMensagens();
+}
+
+/* ── Mostrar / ocultar senha ── */
+function toggleSenha(inputId, btn) {
+  const input = document.getElementById(inputId);
+  const icon  = btn.querySelector('i');
+
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.classList.replace('fa-eye', 'fa-eye-slash');
+  } else {
+    input.type = 'password';
+    icon.classList.replace('fa-eye-slash', 'fa-eye');
+  }
+}
+
+/* ── Força da senha ── */
+function verificarForca(senha) {
+  const barras = [
+    document.getElementById('fb1'),
+    document.getElementById('fb2'),
+    document.getElementById('fb3'),
+    document.getElementById('fb4'),
+  ];
+  const texto = document.getElementById('forca-texto');
+  if (!barras[0]) return;
+
+  let pontos = 0;
+  if (senha.length >= 8)          pontos++;
+  if (/[A-Z]/.test(senha))        pontos++;
+  if (/[0-9]/.test(senha))        pontos++;
+  if (/[^A-Za-z0-9]/.test(senha)) pontos++;
+
+  const niveis = [
+    { cor: '#ef4444', label: 'Muito fraca' },
+    { cor: '#f97316', label: 'Fraca'       },
+    { cor: '#eab308', label: 'Média'       },
+    { cor: '#22c55e', label: 'Forte'       },
+  ];
+
+  barras.forEach((b, i) => {
+    b.style.background = i < pontos ? niveis[pontos - 1].cor : '#e5e7eb';
+  });
+
+  texto.textContent = senha.length > 0 ? (niveis[pontos - 1]?.label ?? '') : '';
+  texto.style.color = pontos > 0 ? niveis[pontos - 1].cor : '#6b7280';
+}
+
+/* ── Mostrar mensagem de feedback ── */
+function mostrarMsg(id, texto, tipo = 'erro') {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = texto;
+  el.className   = 'auth-msg auth-msg--' + tipo;
+}
+
+function limparMensagens() {
+  document.querySelectorAll('.auth-msg').forEach(el => {
+    el.textContent = '';
+    el.className   = 'auth-msg';
+  });
+}
+
+/* ── Handler: Login ── */
+function handleLogin(e) {
+  e.preventDefault();
+  const email = document.getElementById('login-email').value.trim();
+  const senha = document.getElementById('login-senha').value;
+
+  if (!email || !senha) {
+    mostrarMsg('login-msg', 'Preencha todos os campos.');
+    return;
+  }
+
+  mostrarMsg('login-msg', 'Entrando...', 'info');
+
+  setTimeout(() => {
+    // Substitua por sua chamada real ao backend (fetch/axios)
+    mostrarMsg('login-msg', '✅ Login realizado com sucesso!', 'sucesso');
+    setTimeout(() => fecharModal(), 1200);
+  }, 1000);
+}
+
+/* ── Handler: Cadastro ── */
+function handleCadastro(e) {
+  e.preventDefault();
+  const nome     = document.getElementById('cad-nome').value.trim();
+  const email    = document.getElementById('cad-email').value.trim();
+  const senha    = document.getElementById('cad-senha').value;
+  const confirma = document.getElementById('cad-confirma').value;
+  const termos   = document.getElementById('cad-termos').checked;
+
+  if (!nome || !email || !senha || !confirma) {
+    mostrarMsg('cad-msg', 'Preencha todos os campos.');
+    return;
+  }
+
+  if (senha !== confirma) {
+    mostrarMsg('cad-msg', 'As senhas não coincidem.');
+    return;
+  }
+
+  if (senha.length < 8) {
+    mostrarMsg('cad-msg', 'A senha deve ter pelo menos 8 caracteres.');
+    return;
+  }
+
+  if (!termos) {
+    mostrarMsg('cad-msg', 'Aceite os termos para continuar.');
+    return;
+  }
+
+  mostrarMsg('cad-msg', 'Criando sua conta...', 'info');
+
+  setTimeout(() => {
+    // Substitua por sua chamada real ao backend (fetch/axios)
+    mostrarMsg('cad-msg', '✅ Conta criada! Bem-vindo à Abapyra!', 'sucesso');
+    setTimeout(() => {
+      fecharModal();
+      trocarAba('login');
+    }, 1400);
+  }, 1000);
+}

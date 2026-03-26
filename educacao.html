@@ -277,8 +277,6 @@
 
     <footer id="footer"></footer>
 
-    <script id="./js/cursos.js"></script>
-
     <!-- Acessibilidade -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -289,9 +287,10 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
-    <script src="./js/acessibilidade.js"></script>
+  <script src="./js/acessibilidade.js"></script>
 
     <script src="./js/cursos.js"></script>
+    <script src="./js/auth.js"></script>
 
 
     <script>
@@ -320,19 +319,20 @@
             .then(r => r.text())
             .then(d => document.getElementById('footer').innerHTML = d);
 
-        fetch('includes/acessibilidade.html')
-            .then(r => r.text())
-            .then(d => {
-                const div = document.createElement('div');
-                div.innerHTML = d;
-                document.body.appendChild(div);
-            });
+    fetch('includes/acessibilidade.html')
+      .then(r => r.text())
+      .then(d => {
+        const div = document.createElement('div');
+        div.innerHTML = d;
+        document.body.appendChild(div);
+      });
 
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('aberto');
-            document.getElementById('navActions').classList.toggle('aberto');
-        }
-    </script>
+    fetch('includes/auth.html')
+      .then(r => r.text())
+      .then(d => {
+        document.body.insertAdjacentHTML('beforeend', d);
+      });
+  </script>
 </body>
 
 </html>
