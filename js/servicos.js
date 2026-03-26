@@ -31,35 +31,27 @@ const MSG = {
 // ──────────────────────────────────────────────────────────────
 
 function inicializar() {
-    // Cache de elementos do DOM
     ELEMENTS.cepInput = document.getElementById('cep-input');
     ELEMENTS.buscaMsg = document.getElementById('busca-msg');
     ELEMENTS.mapaWrapper = document.getElementById('mapa-wrapper');
     ELEMENTS.mapaElement = document.getElementById('mapa');
 
-    // Validar elementos
     if (!ELEMENTS.cepInput || !ELEMENTS.buscaMsg) {
         console.error('Elementos necessários não encontrados no HTML');
         return;
     }
 
-    // Event listeners
     ELEMENTS.cepInput.addEventListener('input', formatarCEP);
     ELEMENTS.cepInput.addEventListener('keydown', (e) => e.key === 'Enter' && buscarTecnicos());
     document.getElementById('busca-btn')?.addEventListener('click', buscarTecnicos);
 
-    // Validação de formulário
     const form = document.getElementById('cadastro-form');
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             console.log('Formulário submetido');
-            // Implementar envio do formulário aqui
         });
     }
-
-    // Carregar layout
-    carregarLayout();
 }
 
 // Iniciar quando o DOM estiver pronto
@@ -67,24 +59,6 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inicializar);
 } else {
     inicializar();
-}
-
-async function carregarLayout() {
-    try {
-        const [header, footer] = await Promise.all([
-            fetch('includes/header.html'),
-            fetch('includes/footer.html')
-        ]);
-
-        if (header.ok) {
-            document.getElementById('header').innerHTML = await header.text();
-        }
-        if (footer.ok) {
-            document.getElementById('footer').innerHTML = await footer.text();
-        }
-    } catch (e) {
-        console.error('Erro ao carregar layout:', e);
-    }
 }
 
 function formatarCEP(e) {
@@ -135,13 +109,12 @@ async function buscarTecnicos() {
         const { logradouro, bairro, localidade, uf } = data;
         const cepFormatado = `${cep.slice(0, 5)}-${cep.slice(5, 8)}`;
         const enderecoExibido = montarEnderecoExibido(logradouro, bairro);
-        
+
         definirMensagem(
             `${MSG.SUCCESS}${enderecoExibido}, ${localidade} - ${uf}${MSG.SEARCHING}`,
             'busca-msg sucesso'
         );
 
-        // Passar endereço completo para marcar ponto exato + buscar técnicos próximos
         exibirMapa(logradouro, bairro, localidade, uf, cepFormatado);
 
     } catch (e) {
@@ -169,7 +142,6 @@ function exibirMapa(rua, bairro, cidade, uf, cep) {
 
     ELEMENTS.mapaWrapper.style.display = 'block';
 
-    // Monta endereço completo para marcar ponto exato + buscar técnicos próximos
     const endereco = `${rua || ''} ${bairro || ''} ${cidade} ${cep}`.trim();
     const query = encodeURIComponent(`${endereco} ${CONFIG.SEARCH_QUERY}`);
     const src = `${CONFIG.MAPS_URL}?q=${query}&z=${CONFIG.DEFAULT_ZOOM}&output=embed&hl=pt-BR`;
