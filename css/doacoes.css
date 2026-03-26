@@ -365,3 +365,133 @@ body {
 .outras-card a:hover {
     color: #1d4ed8;
 }
+
+/* ==================== RESPONSIVIDADE ==================== */
+
+@media (max-width: 1024px) {
+    .hero-texto h1 {
+        font-size: 2.1rem;
+    }
+    
+    .pode-doar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .historias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .outras-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+        min-height: auto;
+        gap: 40px;
+    }
+    
+    .hero-texto h1 {
+        font-size: 1.9rem;
+    }
+    
+    .hero-img img {
+        width: 100%;
+        max-width: 340px;
+    }
+    
+    .hero-botoes {
+        justify-content: center;
+    }
+    
+    .pode-doar {
+        padding: 50px 5%;
+    }
+    
+    .pode-doar-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .secao-form {
+        padding: 50px 5%;
+    }
+    
+    .form-wrap {
+        padding: 32px 20px;
+        max-width: 100%;
+    }
+    
+    .form-linha {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .historias {
+        padding: 50px 5%;
+    }
+    
+    .historias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .outras-formas {
+        padding: 50px 5%;
+    }
+    
+    .outras-header h2 {
+        font-size: 1.7rem;
+    }
+    
+    .outras-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-texto h1 {
+        font-size: 1.65rem;
+    }
+    
+    .hero-texto p {
+        font-size: 0.95rem;
+    }
+    
+    .pode-doar-header h2,
+    .historias-header h2,
+    .outras-header h2 {
+        font-size: 1.55rem;
+    }
+    
+    .form-wrap h3 {
+        font-size: 1.25rem;
+    }
+    
+    .doar-card {
+        padding: 24px 16px;
+    }
+    
+    .historia-card {
+        padding: 24px 20px;
+    }
+    
+    .outras-card {
+        padding: 28px 20px;
+    }
+    
+    .outras-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+}
