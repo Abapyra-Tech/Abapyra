@@ -154,7 +154,7 @@
   <footer id="footer"></footer>
 
   <script src="./js/descarte.js"></script>
-  
+
   <!-- Acessibilidade -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
@@ -190,6 +190,12 @@
       .then(d => {
         document.body.insertAdjacentHTML('beforeend', d);
       });
+      
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('aberto');
+      document.getElementById('navActions').classList.toggle('aberto');
+    }  
   </script>
 </body>
+
 </html>
