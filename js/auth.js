@@ -6,14 +6,18 @@
 /* ── Abrir modal ── */
 function abrirModal(aba = 'login') {
   const overlay = document.getElementById('auth-overlay');
+  console.log('abrirModal chamado, overlay:', overlay);
 
   // Se o modal ainda não foi injetado pelo fetch, tenta novamente
   if (!overlay) {
+    console.log('Overlay não encontrado, tentando novamente em 100ms');
     setTimeout(() => abrirModal(aba), 100);
     return;
   }
 
+  console.log('Abrindo modal - removendo hidden e adicionando ativo');
   overlay.removeAttribute('hidden');
+  overlay.classList.add('ativo');
   document.body.style.overflow = 'hidden';
   trocarAba(aba);
 
@@ -27,7 +31,7 @@ function abrirModal(aba = 'login') {
 function fecharModal() {
   const overlay = document.getElementById('auth-overlay');
   if (!overlay) return;
-  overlay.setAttribute('hidden', '');
+  overlay.classList.remove('ativo');
   document.body.style.overflow = '';
   limparMensagens();
 }

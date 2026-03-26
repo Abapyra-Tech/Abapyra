@@ -268,49 +268,52 @@
 
   <footer id="footer"></footer>
 
-  <!-- Acessibilidade -->
+  <!-- Acessibilidade VLibras -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-  
+
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
-    <script src="./js/acessibilidade.js"></script>
-  <script src="./js/auth.js"></script>
+  <script src="./js/acessibilidade.js"></script>
+  <!-- auth.js NÃO é carregado aqui — é carregado dinamicamente após o fetch do auth.html -->
 
   <script>
+    // ── Header ──
     fetch('includes/header.html')
       .then(r => r.text())
       .then(d => {
         document.getElementById('header').innerHTML = d;
-        console.log('Header carregado com sucesso');
 
         // Marca link ativo APÓS o header carregar
-        const pagina = window.location.pathname.split('/').pop();
+        let pagina = window.location.pathname.split('/').pop();
+        if (!pagina || pagina === '') pagina = 'index.html'; // fallback para raiz
+
         document.querySelectorAll('.nav-links a').forEach(link => {
-          const href = link.getAttribute('href').split('/').pop();
+          // Remove âncora (#sobre, #cursos etc.) antes de comparar
+          const href = link.getAttribute('href').split('/').pop().split('#')[0];
           if (href === pagina) {
             link.classList.add('ativo');
-            console.log('Link marcado como ativo:', link);
-                        console.log(link);
           }
         });
 
-        // Hamburguer APÓS o header carregar
+        // Hamburguer
         const menuToggle = document.getElementById('menuToggle');
         if (menuToggle) {
           menuToggle.addEventListener('click', toggleMenu);
         }
       });
 
+    // ── Footer ──
     fetch('includes/footer.html')
       .then(r => r.text())
       .then(d => document.getElementById('footer').innerHTML = d);
 
+    // ── Acessibilidade ──
     fetch('includes/acessibilidade.html')
       .then(r => r.text())
       .then(d => {
@@ -319,16 +322,24 @@
         document.body.appendChild(div);
       });
 
+    // ── Auth: injeta HTML primeiro, só depois carrega o JS ──
     fetch('includes/auth.html')
       .then(r => r.text())
       .then(d => {
         document.body.insertAdjacentHTML('beforeend', d);
+
+        // Carrega auth.js dinamicamente APÓS o modal estar no DOM
+        const script = document.createElement('script');
+        script.src = './js/auth.js';
+        document.body.appendChild(script);
       });
+
     function toggleMenu() {
       document.getElementById('navLinks').classList.toggle('aberto');
       document.getElementById('navActions').classList.toggle('aberto');
     }
   </script>
+
 </body>
 
 </html>
