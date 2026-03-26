@@ -178,8 +178,6 @@
 
     <footer id="footer"></footer>
 
-    <script src="./cursos.js"></script>
-
     <!-- Acessibilidade -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -191,6 +189,7 @@
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
         <script src="./js/acessibilidade.js"></script>
+        <script src="./js/auth.js"></script>
 
     <script>
         fetch('includes/header.html')
@@ -224,6 +223,12 @@
                     const div = document.createElement('div');
                     div.innerHTML = d;
                     document.body.appendChild(div);
+                });
+
+            fetch('includes/auth.html')
+                .then(r => r.text())
+                .then(d => {
+                    document.body.insertAdjacentHTML('beforeend', d);
                 });
         </script>
 </body>

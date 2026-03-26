@@ -120,7 +120,6 @@ nav {
 }
 
 /* ── HOME ── */
-/* CORREÇÃO: removido position:absolute da imagem, layout flex agora centraliza corretamente */
 .home {
     display: flex;
     align-items: center;
@@ -190,7 +189,6 @@ nav {
     background: #289c63;
 }
 
-/* CORREÇÃO: imagem agora fica dentro do fluxo normal, centralizada verticalmente */
 .fooder-img {
     flex: 1;
     display: flex;
@@ -249,7 +247,6 @@ nav {
     gap: 12px;
 }
 
-/* CORREÇÃO: card-servico e card-pilar com estilos separados para evitar conflito */
 .card-servico {
     background: #e8eaed;
 }
@@ -262,7 +259,6 @@ nav {
     text-align: left;
 }
 
-/* Ícone exclusivo dos pilares — sobrescreve o .icon da seção cultura */
 .card-pilar .icon {
     background: #1fbf75;
     border-radius: 50%;
@@ -857,7 +853,6 @@ body.leitura-ativa textarea {
 
 /* ══════════════════════════════════════════════════
    ABAPYRA TECH — Modal de Autenticação
-   Cole este bloco no FINAL do seu style.css
    ══════════════════════════════════════════════════ */
 
 /* ── OVERLAY ── */
@@ -868,14 +863,17 @@ body.leitura-ativa textarea {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 10000;
-  display: flex;
-  align-items: center;
+  display: none;
+  align-items: flex-start; /* ← CORREÇÃO: era center, agora flex-start para modal alto não ser cortado */
   justify-content: center;
   padding: 20px;
+  overflow-y: auto;
   animation: authOverlayIn .2s ease;
 }
 
-.auth-overlay[hidden] { display: none !important; }
+.auth-overlay.ativo {
+  display: flex !important;
+}
 
 @keyframes authOverlayIn {
   from { opacity: 0; }
@@ -888,12 +886,14 @@ body.leitura-ativa textarea {
   border-radius: 20px;
   width: 100%;
   max-width: 440px;
+  max-height: 90vh;   /* ← CORREÇÃO: limita altura do modal à viewport */
+  overflow-y: auto;   /* ← CORREÇÃO: scroll interno quando conteúdo ultrapassa a altura */
   padding: 36px 32px 28px;
   position: relative;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
   animation: authModalIn .28s cubic-bezier(.34, 1.56, .64, 1);
-  max-height: 92vh;
-  overflow-y: auto;
+  /* Garante que o modal fique centrado verticalmente quando couber na tela */
+  margin: auto;
 }
 
 @keyframes authModalIn {
@@ -938,7 +938,7 @@ body.leitura-ativa textarea {
 .auth-brand-name {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--azul-escuro); /* reutiliza variável do style.css */
+  color: var(--azul-escuro);
 }
 
 /* ── ABAS ── */
@@ -1039,7 +1039,7 @@ body.leitura-ativa textarea {
 }
 
 .auth-input-wrap input:focus {
-  border-color: var(--verde-claro);   /* #00C851 do seu style.css */
+  border-color: var(--verde-claro);
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(0, 200, 81, .12);
 }
@@ -1124,7 +1124,7 @@ body.leitura-ativa textarea {
   margin-top: 2px;
   width: 100%;
   padding: 12px;
-  background: var(--verde-claro);         /* #00C851 */
+  background: var(--verde-claro);
   border: none;
   border-radius: 10px;
   color: #ffffff;
@@ -1233,11 +1233,10 @@ body.leitura-ativa textarea {
   transition: opacity .2s;
 }
 .auth-link-btn:hover { opacity: .75; text-decoration: underline; }
+
 .acess-toggle i {
     color: #ffffff;
 }
-
-/* ── RESPONSIVO ── */
 
 /* ── MENU TOGGLE ── */
 .menu-toggle {
@@ -1317,13 +1316,13 @@ body.leitura-ativa textarea {
     }
 
     .nav-logo .logo img {
-    width: 50px;
-    height: 45px;
-}
+        width: 50px;
+        height: 45px;
+    }
 
-.logo-name img {
-    height: 18px;
-}
+    .logo-name img {
+        height: 18px;
+    }
 
     /* HOME */
     .home {
