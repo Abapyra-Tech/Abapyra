@@ -309,78 +309,118 @@ img{
     height:auto;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 1024px){
+/* ==================== RESPONSIVIDADE ==================== */
 
-    .card{
-        max-width:45%;
+@media (max-width: 1024px) {
+    .titulo {
+        font-size: 34px;
     }
-
-    .busca-cep{
-        width:80%;
+    
+    .titulo-produtos {
+        font-size: 36px;
+    }
+    
+    .cartao {
+        max-width: 45%;
+    }
+    
+    .busca-cep {
+        width: 80%;
     }
 }
 
-@media (max-width: 768px){
-
-    header h1{
-        font-size:28px;
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 28px;
     }
-
-    header p{
-        font-size:16px;
+    
+    header p {
+        font-size: 16px;
     }
-
-    .acoes{
-        flex-direction:column;
-        align-items:center;
+    
+    .acoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
-
-    .btn{
-        width:90%;
-        justify-content:center;
-        text-align:center;
+    
+    .btn {
+        width: 90%;
+        max-width: 320px;
+        justify-content: center;
+        padding: 16px 20px;
     }
-
-    .beneficios{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
+    
+    .beneficios {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .titulo-produtos{
-        font-size:28px;
+    
+    .titulo-produtos {
+        font-size: 28px;
+        margin-top: 30px;
     }
-
-    .categorias{
-        gap:15px;
-        font-size:14px;
+    
+    .categorias {
+        gap: 15px;
+        font-size: 14px;
     }
-
-    .busca-cep{
-        flex-direction:column;
-        width:90%;
+    
+    .busca-cep {
+        flex-direction: column;
+        width: 90%;
+        padding: 15px;
     }
-
-    .btn-buscar{
-        width:100%;
+    
+    .btn-buscar {
+        width: 100%;
     }
-
-    .cards{
-        flex-direction:column;
-        align-items:center;
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-
-    .card{
-        max-width:320px;
-        width:90%;
+    
+    .cartao {
+        max-width: 320px;
+        width: 90%;
     }
-
-    .info-lixo{
-        width:90%;
+    
+    .info-lixo {
+        width: 90%;
     }
+    
+    form {
+        width: 90%;
+        padding: 25px 20px;
+    }
+    
+    .submit {
+        width: 100%;
+        max-width: none;
+    }
+}
 
-    form{
-        width:90%;
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 24px;
+    }
+    
+    .titulo-produtos {
+        font-size: 24px;
+    }
+    
+    .btn {
+        font-size: 16px;
+    }
+    
+    .cartao {
+        padding: 18px;
+    }
+    
+    .form-wrap h3 {
+        font-size: 18px;
     }
 }

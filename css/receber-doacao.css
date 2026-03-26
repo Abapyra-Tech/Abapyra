@@ -481,3 +481,149 @@ body {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.65);
 }
+
+/* ==================== RESPONSIVIDADE ==================== */
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 50px 6%;
+    }
+    
+    .hero-texto h1 {
+        font-size: 2rem;
+    }
+    
+    .como-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .impacto-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+        gap: 40px;
+    }
+    
+    .hero-texto h1 {
+        font-size: 1.85rem;
+    }
+    
+    .hero-img img {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .hero-botoes {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .como-funciona {
+        padding: 50px 5%;
+    }
+    
+    .como-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    
+    .requisitos {
+        padding: 50px 5%;
+    }
+    
+    .requisitos-box {
+        padding: 28px 20px;
+    }
+    
+    .projetos {
+        padding: 50px 5%;
+    }
+    
+    .projetos-busca {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .busca-btn {
+        width: 100%;
+        height: 48px;
+    }
+    
+    .projetos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .projeto-card img {
+        height: 180px;
+    }
+    
+    .cadastro-ong {
+        padding: 50px 5%;
+    }
+    
+    .form-ong {
+        padding: 28px 20px;
+        max-width: 100%;
+    }
+    
+    .form-linha {
+        grid-template-columns: 1fr;
+    }
+    
+    .impacto {
+        padding: 50px 5%;
+    }
+    
+    .impacto-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .impacto-item strong {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-texto h1 {
+        font-size: 1.65rem;
+    }
+    
+    .hero-texto p {
+        font-size: 0.9rem;
+    }
+    
+    .como-header h2,
+    .requisitos-header h2,
+    .cadastro-header h2,
+    .impacto-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .projetos-header h2 {
+        font-size: 1.45rem;
+    }
+    
+    .projeto-card img {
+        height: 160px;
+    }
+    
+    .btn-lg {
+        width: 100%;
+    }
+    
+    .upload-area {
+        padding: 24px;
+    }
+}

@@ -152,7 +152,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    min-width: 1000px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -165,6 +165,7 @@
     display: flex;
     gap: 24px;
     transition: transform 0.4s ease;
+    width: max-content;
 }
 
 .curso-card {
@@ -172,6 +173,7 @@
     border-radius: 14px;
     overflow: hidden;
     max-width: 250px;
+    width: 250px;
     flex-shrink: 0;
     text-align: left;
 }
@@ -499,4 +501,206 @@
     font-size: 0.9rem;
     color: #374151;
     margin: 0;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+
+@media (max-width: 1024px) {
+    .curso h1 {
+        font-size: 34px;
+    }
+    
+    .sobre h1 {
+        font-size: 28px;
+    }
+    
+    .cursos-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .ensine h2 {
+        font-size: 2rem;
+    }
+    
+    .curso-card {
+        max-width: 240px;
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .curso {
+        min-height: 520px;
+        padding: 30px 15px;
+    }
+    
+    .curso h1 {
+        font-size: 28px;
+    }
+    
+    .curso p {
+        font-size: 16px;
+    }
+    
+    .sobre {
+        padding: 60px 15px;
+        min-height: auto;
+    }
+    
+    .sobre h1 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    
+    .cardsEducacao {
+        max-width: 100%;
+    }
+    
+    .cursos {
+        padding: 50px 5%;
+    }
+    
+    .cursos-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Carrossel corrigido */
+    .carrossel-wrapper {
+        max-width: 100%;
+    }
+    
+    .curso-card {
+        max-width: 220px;
+        width: 220px;
+    }
+    
+    .carrossel-track {
+        gap: 16px;
+    }
+    
+    .curso-thumb img {
+        height: 140px;
+    }
+    
+    .ensine {
+        padding: 50px 5%;
+    }
+    
+    .ensine h2 {
+        font-size: 1.8rem;
+    }
+    
+    .como-funciona {
+        padding: 50px 5%;
+    }
+    
+    .como-funciona h2 {
+        font-size: 1.6rem;
+    }
+    
+    .como-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .secao-form {
+        padding: 50px 5%;
+    }
+    
+    .form-wrap {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+    
+    .form-linha {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkboxes,
+    .radios {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .info-banner {
+        padding: 50px 5%;
+    }
+    
+    .info-banner > div {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .curso {
+        min-height: 460px;
+        padding: 25px 12px;
+    }
+    
+    .curso h1 {
+        font-size: 24px;
+    }
+    
+    .curso p {
+        font-size: 15px;
+    }
+    
+    .sobre h1 {
+        font-size: 24px;
+    }
+    
+    .cardEducacao {
+        padding: 20px 22px;
+    }
+    
+    .cardEducacao h3 {
+        font-size: 18px;
+    }
+    
+    .cursos-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Carrossel ainda mais ajustado no mobile pequeno */
+    .curso-card {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .curso-thumb img {
+        height: 130px;
+    }
+    
+    .carrossel-track {
+        gap: 12px;
+    }
+    
+    .curso-body {
+        padding: 16px;
+    }
+    
+    .curso-body h4 {
+        font-size: 0.95rem;
+    }
+    
+    .ensine h2 {
+        font-size: 1.65rem;
+    }
+    
+    .como-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .form-wrap {
+        padding: 25px 18px;
+    }
+    
+    .info-banner > div {
+        padding: 24px 18px;
+    }
 }
