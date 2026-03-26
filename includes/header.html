@@ -17,7 +17,6 @@
     <a href="#" class="btn btn-outline" onclick="abrirModal('cadastro'); return false;">Cadastrar</a>
   </div>
   
-</nav>
 
   <button class="menu-toggle" id="menuToggle">
     <span></span>
@@ -25,3 +24,14 @@
     <span></span>
   </button>
 </nav>
+
+<script>
+  fetch('includes/auth.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('beforeend', html);
+      const s = document.createElement('script');
+      s.src = 'js/auth.js';
+      document.body.appendChild(s);
+    });
+</script>
