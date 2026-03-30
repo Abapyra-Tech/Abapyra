@@ -1,5 +1,13 @@
-/* HERO */
+body {
+    position: relative;
+}
 
+nav {
+    position: relative;
+    z-index: 1000;
+}
+
+/* HERO */
 .curso{
     min-height:600px;
     padding:40px;
@@ -529,11 +537,31 @@
 }
 
 @media (max-width: 768px) {
+    nav {
+        position: relative !important;
+    }
+
+    .nav-links {
+        position: absolute !important;
+        top: 70px !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 9999 !important;
+    }
+
     .curso {
         min-height: 520px;
         padding: 30px 15px;
     }
     
+    .curso::before {
+        z-index: 0;
+    }
+    
+    .curso {
+        z-index: 0;
+    }
+
     .curso h1 {
         font-size: 28px;
     }
