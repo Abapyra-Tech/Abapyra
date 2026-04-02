@@ -61,24 +61,6 @@ if (document.readyState === 'loading') {
     inicializar();
 }
 
-async function carregarLayout() {
-    try {
-        const [header, footer] = await Promise.all([
-            fetch('includes/header.html'),
-            fetch('includes/footer.html')
-        ]);
-
-        if (header.ok) {
-            document.getElementById('header').innerHTML = await header.text();
-        }
-        if (footer.ok) {
-            document.getElementById('footer').innerHTML = await footer.text();
-        }
-    } catch (e) {
-        console.error('Erro ao carregar layout:', e);
-    }
-}
-
 function formatarCEP(e) {
     let valor = e.target.value.replace(/\D/g, '');
     if (valor.length > 5) {

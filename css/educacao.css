@@ -52,7 +52,7 @@ nav {
     margin-bottom:30px;
 }
 
-.curso button{
+.btn-a {
     padding:14px 32px;
     font-size:16px;
     background:#ff8c00;
@@ -60,7 +60,13 @@ nav {
     border:none;
     border-radius:8px;
     cursor:pointer;
+    text-decoration: none;
+    z-index: 1;
 }
+
+.btn-a:hover {
+    background:#e07b00;
+} 
 
 /* SOBRE */
 
