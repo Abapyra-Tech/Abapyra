@@ -390,7 +390,7 @@ body {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 50px 5%;
+        padding: 80px 5%;
         min-height: auto;
         gap: 40px;
     }

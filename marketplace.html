@@ -13,168 +13,172 @@
 </head>
 
 <body>
+
     <header id="header"></header>
 
-    <div class="container">
+    <main>
+        <div class="container">
+            <h1 class="titulo">Marketplace Sustentável</h1>
+            <div class="acoes">
 
-        <h1 class="titulo">Marketplace Sustentável</h1>
+                <a href="#produtos" class="btn-acoes">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Vender Eletrônicos</span>
+                </a>
 
-        <div class="acoes">
+                <a href="#produtos" class="btn-acoes">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Comprar Eletrônicos</span>
+                </a>
 
-            <button class="btn">
-                <i class="fa-solid fa-camera"></i>
-                <span>Vender Eletrônicos</span>
-            </button>
+            </div>
 
-            <button class="btn">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span>Comprar Eletrônicos</span>
-            </button>
+            <p>
+                <strong>Venda eletrônicos usados ou quebrados e compre equipamentos
+                    reaproveitados em nossa plataforma sustentável</strong>
+            </p>
+
+            <div class="beneficios">
+                <span>Preços acessíveis</span>
+                <span>Vendedores verificados</span>
+                <span>Sustentável</span>
+            </div>
+
+
 
         </div>
 
-        <p>
-            <strong>Venda eletrônicos usados ou quebrados e compre equipamentos
-                reaproveitados em nossa plataforma sustentável</strong>
-        </p>
+        <section class="produtos" id="produtos">
 
-        <div class="beneficios">
-            <span>Preços acessíveis</span>
-            <span>Vendedores verificados</span>
-            <span>Sustentável</span>
+            <h2 class="titulo-produtos">Produtos <span>Disponíveis</span></h2>
+
+            <div class="categorias">
+
+                <a href="#">Smartphones</a>
+                <a href="#">Notebooks</a>
+                <a href="#">Celulares</a>
+                <a href="#">Componentes</a>
+                <a href="#">Peças</a>
+                <a href="#">Todos</a>
+
+            </div>
+
+            <div class="busca-cep">
+
+                <div class="input-cep">
+                    <span class="icon">📍</span>
+                    <input type="text" placeholder="Digite o seu CEP">
+                </div>
+
+                <button class="btn-buscar">🔍</button>
+
+            </div>
+
+            <div class="cards">
+
+                <div class="cartao">
+                    <img src="Imagens/099a3140b59323f8f7580752f8752b1c 1.png">
+                    <h3>Iphone 11 128GB - Apple</h3>
+                    <p>Defeito: Troca Display danificado</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="cartao">
+                    <img src="Imagens/fonte.png">
+                    <h3>Fonte Corsair 650W
+                    </h3>
+                    <p>Defeito: Não liga, possível reparo</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="cartao">
+                    <img src="Imagens/Rectangle 80.png">
+                    <h3> Placa de Circuito - Arduino </h3>
+                    <p>Defeito: Não liga, possível reparo kkk kkkkkk</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+
+                <div class="cartao">
+                    <img src="./Imagens/relogio.png">
+                    <h3> Tela quebrada - Apple</h3>
+                    <p>Defeito: Não liga, possível reparo</p>
+                    <span class="preco">R$ 600</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+
+
+                <div class="cartao">
+                    <img src="Imagens/placa.png">
+                    <h3>Placa Notebook Dell</h3>
+                    <p>Defeito: Queimada, Verificar troca</p>
+                    <span class="preco">R$ 150</span>
+
+                    <div class="botoes">
+                        <button class="detalhes">Detalhes</button>
+                        <button class="comprar">Comprar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="info-lixo">
+            Este marketplace já evitou <strong>140kg</strong> de lixo eletrônico.
         </div>
 
 
-
-    </div>
-    <section class="produtos">
-
-        <h2 class="titulo-produtos">Produtos <span>Disponíveis</span></h2>
-
-        <div class="categorias">
-
-            <a href="#">Smartphones</a>
-            <a href="#">Notebooks</a>
-            <a href="#">Celulares</a>
-            <a href="#">Componentes</a>
-            <a href="#">Peças</a>
-            <a href="#">Todos</a>
-
+        <div class="form-wrap">
+            <h3>Anuncie seu Produto</h3>
+            <form id="cadastro-form" class="form" novalidate>
+                <div class="field">
+                    <span aria-hidden="true"><i class="fa-slab-press fa-regular fa-user"
+                            style="color: rgb(249, 115, 22);"></i></span>
+                    <input type="text" name="nome" placeholder="Nome completo" required
+                        aria-label="Campo de nome completo" />
+                </div>
+                <div class="field">
+                    <span aria-hidden="true"><i class="fa-solid fa-map-pin"
+                            style="color: rgb(249, 115, 22);"></i></span>
+                    <input type="text" name="cep" placeholder="CEP/Bairro" required
+                        aria-label="Campo de CEP ou bairro" />
+                </div>
+                <div class="field">
+                    <span aria-hidden="true"><i class="fa-solid fa-wrench" style="color: rgb(249, 115, 22);"></i></span>
+                    <input type="text" name="especialidade" placeholder="Especialidade" required
+                        aria-label="Campo de especialidade" />
+                </div>
+                <div class="field">
+                    <span aria-hidden="true"><i class="fa-solid fa-mobile" style="color: rgb(249, 115, 22);"></i></span>
+                    <input type="email" name="contato" placeholder="E-mail ou telefone" required
+                        aria-label="Campo de informações de contato" />
+                </div>
+                <button type="submit" class="submit">Enviar</button>
+            </form>
         </div>
-
-        <div class="busca-cep">
-
-            <div class="input-cep">
-                <span class="icon">📍</span>
-                <input type="text" placeholder="Digite o seu CEP">
-            </div>
-
-            <button class="btn-buscar">🔍</button>
-
-        </div>
-
-        <div class="cards">
-
-            <div class="cartao">
-                <img src="Imagens/099a3140b59323f8f7580752f8752b1c 1.png">
-                <h3>Iphone 11 128GB - Apple</h3>
-                <p>Defeito: Troca Display danificado</p>
-                <span class="preco">R$ 600</span>
-
-                <div class="botoes">
-                    <button class="detalhes">Detalhes</button>
-                    <button class="comprar">Comprar</button>
-                </div>
-            </div>
-
-            <div class="cartao">
-                <img src="Imagens/fonte.png">
-                <h3>Fonte Corsair 650W
-                </h3>
-                <p>Defeito: Não liga, possível reparo</p>
-                <span class="preco">R$ 600</span>
-
-                <div class="botoes">
-                    <button class="detalhes">Detalhes</button>
-                    <button class="comprar">Comprar</button>
-                </div>
-            </div>
-
-            <div class="cartao">
-                <img src="Imagens/Rectangle 80.png">
-                <h3> Placa de Circuito - Arduino </h3>
-                <p>Defeito: Não liga, possível reparo kkk kkkkkk</p>
-                <span class="preco">R$ 600</span>
-
-                <div class="botoes">
-                    <button class="detalhes">Detalhes</button>
-                    <button class="comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <div class="cartao">
-                <img src="./Imagens/relogio.png">
-                <h3> Tela quebrada - Apple</h3>
-                <p>Defeito: Não liga, possível reparo</p>
-                <span class="preco">R$ 600</span>
-
-                <div class="botoes">
-                    <button class="detalhes">Detalhes</button>
-                    <button class="comprar">Comprar</button>
-                </div>
-            </div>
-
-
-
-            <div class="cartao">
-                <img src="Imagens/placa.png">
-                <h3>Placa Notebook Dell</h3>
-                <p>Defeito: Queimada, Verificar troca</p>
-                <span class="preco">R$ 150</span>
-
-                <div class="botoes">
-                    <button class="detalhes">Detalhes</button>
-                    <button class="comprar">Comprar</button>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <div class="info-lixo">
-        Este marketplace já evitou <strong>140kg</strong> de lixo eletrônico.
-    </div>
-
-
-    <div class="form-wrap">
-        <h3>Anuncie seu Produto</h3>
-        <form id="cadastro-form" class="form" novalidate>
-            <div class="field">
-                <span aria-hidden="true"><i class="fa-slab-press fa-regular fa-user"
-                        style="color: rgb(249, 115, 22);"></i></span>
-                <input type="text" name="nome" placeholder="Nome completo" required
-                    aria-label="Campo de nome completo" />
-            </div>
-            <div class="field">
-                <span aria-hidden="true"><i class="fa-solid fa-map-pin" style="color: rgb(249, 115, 22);"></i></span>
-                <input type="text" name="cep" placeholder="CEP/Bairro" required aria-label="Campo de CEP ou bairro" />
-            </div>
-            <div class="field">
-                <span aria-hidden="true"><i class="fa-solid fa-wrench" style="color: rgb(249, 115, 22);"></i></span>
-                <input type="text" name="especialidade" placeholder="Especialidade" required
-                    aria-label="Campo de especialidade" />
-            </div>
-            <div class="field">
-                <span aria-hidden="true"><i class="fa-solid fa-mobile" style="color: rgb(249, 115, 22);"></i></span>
-                <input type="email" name="contato" placeholder="E-mail ou telefone" required
-                    aria-label="Campo de informações de contato" />
-            </div>
-            <button type="submit" class="submit">Enviar</button>
-        </form>
-    </div>
-    </section>
+        </section>
+    </main>
 
     <footer id="footer"></footer>
 

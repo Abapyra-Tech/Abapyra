@@ -309,6 +309,7 @@ body {
 
   .hero-texto {
     max-width: 100%;
+    padding: 50px 0px;
   }
 
   .hero-texto h1 {
