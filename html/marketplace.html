@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace Sustentável</title>
-    <link rel="stylesheet" href="./css/marketplace.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/marketplace.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/926a9cde8e.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="Imagens/abapyra-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Imagens/abapyra-logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -33,18 +33,13 @@
 
             </div>
 
-            <p>
-                <strong>Venda eletrônicos usados ou quebrados e compre equipamentos
-                    reaproveitados em nossa plataforma sustentável</strong>
-            </p>
+            <p><strong>Venda eletrônicos usados ou quebrados e compre equipamentos reaproveitados em nossa plataforma sustentável</strong></p>
 
             <div class="beneficios">
                 <span>Preços acessíveis</span>
                 <span>Vendedores verificados</span>
                 <span>Sustentável</span>
             </div>
-
-
 
         </div>
 
@@ -77,7 +72,7 @@
             <div class="cards">
 
                 <div class="cartao">
-                    <img src="Imagens/099a3140b59323f8f7580752f8752b1c 1.png">
+                    <img src="../Imagens/099a3140b59323f8f7580752f8752b1c 1.png">
                     <h3>Iphone 11 128GB - Apple</h3>
                     <p>Defeito: Troca Display danificado</p>
                     <span class="preco">R$ 600</span>
@@ -89,7 +84,7 @@
                 </div>
 
                 <div class="cartao">
-                    <img src="Imagens/fonte.png">
+                    <img src="../Imagens/fonte.png">
                     <h3>Fonte Corsair 650W
                     </h3>
                     <p>Defeito: Não liga, possível reparo</p>
@@ -102,7 +97,7 @@
                 </div>
 
                 <div class="cartao">
-                    <img src="Imagens/Rectangle 80.png">
+                    <img src="../Imagens/Rectangle 80.png">
                     <h3> Placa de Circuito - Arduino </h3>
                     <p>Defeito: Não liga, possível reparo kkk kkkkkk</p>
                     <span class="preco">R$ 600</span>
@@ -115,7 +110,7 @@
 
 
                 <div class="cartao">
-                    <img src="./Imagens/relogio.png">
+                    <img src="../Imagens/relogio.png">
                     <h3> Tela quebrada - Apple</h3>
                     <p>Defeito: Não liga, possível reparo</p>
                     <span class="preco">R$ 600</span>
@@ -129,7 +124,7 @@
 
 
                 <div class="cartao">
-                    <img src="Imagens/placa.png">
+                    <img src="../Imagens/placa.png">
                     <h3>Placa Notebook Dell</h3>
                     <p>Defeito: Queimada, Verificar troca</p>
                     <span class="preco">R$ 150</span>
@@ -192,11 +187,11 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
-    <script src="./js/acessibilidade.js"></script>
-    <script src="./js/auth.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+    <script src="../js/auth.js"></script>
 
     <script>
-        fetch('includes/header.html')
+        fetch('../includes/header.html')
             .then(r => r.text())
             .then(d => {
                 document.getElementById('header').innerHTML = d;
@@ -217,11 +212,11 @@
                 }
             });
 
-        fetch('includes/footer.html')
+        fetch('../includes/footer.html')
             .then(r => r.text())
             .then(d => document.getElementById('footer').innerHTML = d);
 
-        fetch('includes/acessibilidade.html')
+        fetch('../includes/acessibilidade.html')
             .then(r => r.text())
             .then(d => {
                 const div = document.createElement('div');
@@ -229,7 +224,7 @@
                 document.body.appendChild(div);
             });
 
-        fetch('includes/auth.html')
+        fetch('../includes/auth.html')
             .then(r => r.text())
             .then(d => {
                 document.body.insertAdjacentHTML('beforeend', d);

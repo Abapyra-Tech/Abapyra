@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doações — Abapyra Tech</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/doacoes.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/doacoes.css">
     <script src="https://kit.fontawesome.com/926a9cde8e.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="Imagens/abapyra-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Imagens/abapyra-logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="hero-img">
-            <img src="./Imagens/pilha-de-celulares.png" alt="Pilha de eletrônicos" />
+            <img src="../Imagens/pilha-de-celulares.png" alt="Pilha de eletrônicos" />
         </div>
     </section>
 
@@ -117,7 +117,7 @@
         <div class="historias-grid">
             <div class="historia-card">
                 <div class="historia-perfil">
-                    <img src="./Imagens/maria-doacoes.png" alt="Maria Silva" />
+                    <img src="../Imagens/maria-doacoes.png" alt="Maria Silva" />
                     <div>
                         <strong>Maria Silva</strong>
                         <span>Estudante, 16 anos</span>
@@ -129,7 +129,7 @@
             </div>
             <div class="historia-card">
                 <div class="historia-perfil">
-                    <img src="./Imagens/joao-doacoes.png" alt="João Santos" />
+                    <img src="../Imagens/joao-doacoes.png" alt="João Santos" />
                     <div>
                         <strong>João Santos</strong>
                         <span>Estudante, 21 anos</span>
@@ -141,7 +141,7 @@
             </div>
             <div class="historia-card">
                 <div class="historia-perfil">
-                    <img src="./Imagens/ana-doacoes.png" alt="Ana Costa" />
+                    <img src="../Imagens/ana-doacoes.png" alt="Ana Costa" />
                     <div>
                         <strong>Ana Costa</strong>
                         <span>Professora</span>
@@ -208,14 +208,15 @@
             <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
-    <script src="./js/acessibilidade.js"></script>
-    <script src="./js/auth.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+    <script src="../js/auth.js"></script>
 
     <script>
-        fetch('includes/header.html')
+        fetch('../includes/header.html')
             .then(r => r.text())
             .then(d => {
                 document.getElementById('header').innerHTML = d;
@@ -239,11 +240,11 @@
                 }
             });
 
-        fetch('includes/footer.html')
+        fetch('../includes/footer.html')
             .then(r => r.text())
             .then(d => document.getElementById('footer').innerHTML = d);
 
-        fetch('includes/acessibilidade.html')
+        fetch('../includes/acessibilidade.html')
             .then(r => r.text())
             .then(d => {
                 const div = document.createElement('div');
