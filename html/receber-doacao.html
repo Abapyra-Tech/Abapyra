@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receba Doações — Abapyra Tech</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/receber-doacao.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/receber-doacao.css">
     <script src="https://kit.fontawesome.com/926a9cde8e.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="Imagens/abapyra-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Imagens/abapyra-logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="./Imagens/criancas-usando-tecnologia.png" alt="Crianças usando tecnologia" />
+                <img src="../Imagens/criancas-usando-tecnologia.png" alt="Crianças usando tecnologia" />
             </div>
         </section>
 
@@ -133,7 +133,7 @@
             </div>
             <div class="projetos-grid">
                 <div class="projeto-card">
-                    <img src="./Imagens/instituto-robotica.png" alt="Instituto Robótica Social" />
+                    <img src="../Imagens/instituto-robotica.png" alt="Instituto Robótica Social" />
                     <div class="projeto-body">
                         <h4>Instituto Robótica Social</h4>
                         <span class="projeto-local">📍 São Paulo, SP</span>
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <div class="projeto-card">
-                    <img src="./Imagens/instituto-robotica.png" alt="TechKids" />
+                    <img src="../Imagens/instituto-robotica.png" alt="TechKids" />
                     <div class="projeto-body">
                         <h4>TechKids</h4>
                         <span class="projeto-local"><i class="fa-solid fa-location-pin"
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="projeto-card">
-                    <img src="./Imagens/instituto-robotica.png" alt="Instituto Robótica Social" />
+                    <img src="../Imagens/instituto-robotica.png" alt="Instituto Robótica Social" />
                     <div class="projeto-body">
                         <h4>Instituto Robótica Social</h4>
                         <span class="projeto-local"><i class="fa-solid fa-location-pin"
@@ -281,11 +281,11 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
-    <script src="./js/acessibilidade.js"></script>
-    <script src="./js/auth.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+    <script src="../js/auth.js"></script>
 
     <script>
-        fetch('includes/header.html')
+        fetch('../includes/header.html')
             .then(r => r.text())
             .then(d => {
                 document.getElementById('header').innerHTML = d;
@@ -309,11 +309,11 @@
                 }
             });
 
-        fetch('includes/footer.html')
+        fetch('../includes/footer.html')
             .then(r => r.text())
             .then(d => document.getElementById('footer').innerHTML = d);
 
-        fetch('includes/acessibilidade.html')
+        fetch('../includes/acessibilidade.html')
             .then(r => r.text())
             .then(d => {
                 const div = document.createElement('div');

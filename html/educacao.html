@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abapyra</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/educacao.css">
+    <script src="https://kit.fontawesome.com/926a9cde8e.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../Imagens/abapyra-logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <main>
+        <section class="curso">
+            <h1>Cursos Gratuitos de Tecnologia e Manutenção Eletrônica</h1>
+            <p>Aprenda do básico ao avançado. Para jovens a partir de 16 anos, comunidades e baixa renda. Aulas com
+                voluntários experientes.</p>
+            <a href="#cursos" class="btn-a">Inscreva-se Gratuitamente</a>
+        </section>
+
+        <section class="sobre">
+            <h1>Sobre os cursos</h1>
+            <div class="cardsEducacao">
+                <div class="cardEducacao">
+                    <h3>Gratuito e Online</h3>
+                    <p>Acesso completo sem custos. Aprenda no seu ritmo, de qualquer lugar.</p>
+                </div>
+                <div class="cardEducacao">
+                    <h3>Aulas Práticas Voluntárias</h3>
+                    <p>Aprenda com profissionais experientes que doam seu tempo para ensinar.</p>
+                </div>
+                <div class="cardEducacao">
+                    <h3>Certificado</h3>
+                    <p>Receba certificado de conclusão gratuito ao finalizar cada curso.</p>
+                </div>
+                <div class="cardEducacao">
+                    <h3>Inclusão e Sustentabilidade</h3>
+                    <p>Educação acessível focada em reparos e economia circular.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURSOS -->
+        <section id="cursos" class="cursos">
+            <div class="cursos-header">
+                <h2>Nossos Cursos Disponíveis</h2>
+                <p>Escolha o curso ideal para seu nível e área de interesse</p>
+            </div>
+
+            <div class="carrossel-container">
+                <button class="carrossel-btn prev" onclick="moverCarrossel(-1)">&#8592;</button>
+                <div class="carrossel-wrapper">
+                    <div class="carrossel-track" id="carrossel">
+
+                        <div class="curso-card">
+                            <div class="curso-thumb">
+                                <img src="../Imagens/introducao-eletronica.png" alt="Introdução à Eletrônica" />
+                                <span class="badge badge-iniciante">Iniciante</span>
+                            </div>
+                            <div class="curso-body">
+                                <h4>Introdução à Eletrônica</h4>
+                                <div class="curso-info">
+                                    <span>⏱ 4 semanas</span>
+                                    <span>📊 Iniciante</span>
+                                </div>
+                                <p>Aprenda os fundamentos da eletrônica: componentes, 
+                                </p>
+                                <a href="#" class="btn-curso">Acessar Curso</a>
+                            </div>
+                        </div>
+
+                        <div class="curso-card">
+                            <div class="curso-thumb">
+                                <img src="../Imagens/soldagem.png" alt="Soldagem e Reparo de Placas" />
+                                <span class="badge badge-intermediario">Intermediário</span>
+                            </div>
+                            <div class="curso-body">
+                                <h4>Soldagem e Reparo de Placas</h4>
+                                <div class="curso-info">
+                                    <span>⏱ 6 semanas</span>
+                                    <span>📊 Intermediário</span>
+                                </div>
+                                <p>Técnicas de soldagem profissional, dessoldagem e reparo de componentes SMD.</p>
+                                <a href="#" class="btn-curso">Acessar Curso</a>
+                            </div>
+                        </div>
+
+                        <div class="curso-card">
+                            <div class="curso-thumb">
+                                <img src="../Imagens/manutencao.png" alt="Manutenção de Computadores" />
+                                <span class="badge badge-iniciante">Iniciante</span>
+                            </div>
+                            <div class="curso-body">
+                                <h4>Manutenção de Computadores</h4>
+                                <div class="curso-info">
+                                    <span>⏱ 5 semanas</span>
+                                    <span>📊 Iniciante</span>
+                                </div>
+                                <p>Montagem, desmontagem e diagnóstico de problemas em PCs e notebooks.</p>
+                                <a href="#" class="btn-curso">Acessar Curso</a>
+                            </div>
+                        </div>
+
+                        <div class="curso-card">
+                            <div class="curso-thumb">
+                                <img src="../Imagens/micro.png" alt="Microcontroladores Arduino" />
+                                <span class="badge badge-intermediario">Intermediário</span>
+                            </div>
+                            <div class="curso-body">
+                                <h4>Microcontroladores Arduino</h4>
+                                <div class="curso-info">
+                                    <span>⏱ 8 semanas</span>
+                                    <span>📊 Intermediário</span>
+                                </div>
+                                <p>Programação básica e projetos práticos para automação e IoT com Arduino.</p>
+                                <a href="#" class="btn-curso">Acessar Curso</a>
+                            </div>
+                        </div>
+
+                        <div class="curso-card">
+                            <div class="curso-thumb">
+                                <img src="../Imagens/reparo.png" alt="Reparo de Smartphones" />
+                                <span class="badge badge-iniciante">Iniciante</span>
+                            </div>
+                            <div class="curso-body">
+                                <h4>Reparo de Smartphones</h4>
+                                <div class="curso-info">
+                                    <span>⏱ 10 semanas</span>
+                                    <span>📊 Iniciante</span>
+                                </div>
+                                <p>Diagnóstico avançado, troca de tela e reparo de baterias de celulares.</p>
+                                <a href="#" class="btn-curso">Acessar Curso</a>
+                            </div>
+                        </div>
+
+                        <div class="curso-card">
+                            <div class="curso-thumb">
+                                <img src="../Imagens/eletronica.png" alt="Eletroeletrônica de potência" />
+                                <span class="badge badge-avancado">Avançado</span>
+                            </div>
+                            <div class="curso-body">
+                                <h4>Eletroeletrônica de potência</h4>
+                                <div class="curso-info">
+                                    <span>⏱ 12 semanas</span>
+                                    <span>📊 Avançado</span>
+                                </div>
+                                <p>Fontes chaveadas, inversores e conversores de energia para aplicações industriais.
+                                </p>
+                                <a href="#" class="btn-curso">Acessar Curso</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="carrossel-btn next" onclick="moverCarrossel(1)">&#8594;</button>
+            </div>
+
+            <div class="carrossel-dots" id="dots"></div>
+        </section>
+
+        <!-- ENSINE TECNOLOGIA -->
+        <section class="ensine">
+            <div class="ensine-icon"><i class="fa-solid fa-graduation-cap" style="color: rgb(255, 255, 255);"></i></div>
+            <h2>Ensine tecnologia e transforme futuros</h2>
+            <p>Se você tem conhecimento em tecnologia, programação, robótica ou eletrônica, pode contribuir como
+                professor
+                voluntário e ajudar jovens a descobrirem novas oportunidades.</p>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section class="como-funciona">
+            <h2>Como funciona</h2>
+            <div class="como-grid">
+                <div class="como-card">
+                    <div class="como-icon"><i class="fa-solid fa-user" style="color: rgb(255, 255, 255);"></i></div>
+                    <span class="passo">Passo 1</span>
+                    <h4>Faça um cadastro rápido</h4>
+                    <p>Preencha o formulário com suas informações e áreas de conhecimento</p>
+                </div>
+                <div class="como-card">
+                    <div class="como-icon"><i class="fa-solid fa-magnifying-glass"
+                            style="color: rgb(255, 255, 255);"></i>
+                    </div>
+                    <span class="passo">Passo 2</span>
+                    <h4>Nossa equipe analisa seu perfil</h4>
+                    <p>Avaliamos sua experiência e identificamos as melhores oportunidades</p>
+                </div>
+                <div class="como-card">
+                    <div class="como-icon"><i class="fa-solid fa-handshake" style="color: rgb(255, 255, 255);"></i>
+                    </div>
+                    <span class="passo">Passo 3</span>
+                    <h4>Conectamos você a projetos educacionais</h4>
+                    <p>Comece a ensinar e transformar a vida de jovens através da tecnologia</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO PROFESSOR -->
+        <section class="secao-form">
+            <div class="form-wrap">
+                <form class="form-professor">
+                    <div class="form-linha">
+                        <div class="form-grupo">
+                            <label>Nome completo *</label>
+                            <input type="text" />
+                        </div>
+                        <div class="form-grupo">
+                            <label>Email *</label>
+                            <input type="email" />
+                        </div>
+                    </div>
+                    <div class="form-grupo">
+                        <label>Cidade / Estado *</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-grupo">
+                        <label>Área de conhecimento *</label>
+                        <div class="checkboxes">
+                            <label><input type="checkbox" /> Programação</label>
+                            <label><input type="checkbox" /> Eletrônica</label>
+                            <label><input type="checkbox" /> Robótica</label>
+                            <label><input type="checkbox" /> Manutenção de computadores</label>
+                            <label><input type="checkbox" /> Manutenção de celulares</label>
+                            <label><input type="checkbox" /> Outros</label>
+                        </div>
+                    </div>
+                    <div class="form-linha">
+                        <div class="form-grupo">
+                            <label>Experiência *</label>
+                            <select>
+                                <option value="">Selecione sua experiê...</option>
+                                <option>Menos de 1 ano</option>
+                                <option>1 a 3 anos</option>
+                                <option>3 a 5 anos</option>
+                                <option>Mais de 5 anos</option>
+                            </select>
+                        </div>
+                        <div class="form-grupo">
+                            <label>Disponibilidade *</label>
+                            <select>
+                                <option value="">Selecione sua disponibil...</option>
+                                <option>Fins de semana</option>
+                                <option>Dias úteis</option>
+                                <option>Qualquer dia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-grupo">
+                        <label>Tempo disponível *</label>
+                        <div class="radios">
+                            <label><input type="radio" name="tempo" /> 1 hora por semana</label>
+                            <label><input type="radio" name="tempo" /> 2 horas por semana</label>
+                            <label><input type="radio" name="tempo" /> 4 horas por semana</label>
+                            <label><input type="radio" name="tempo" /> Ocasional</label>
+                        </div>
+                    </div>
+                    <div class="form-grupo">
+                        <label>LinkedIn ou portfólio</label>
+                        <input type="url" placeholder="https://..." />
+                    </div>
+                    <div class="form-grupo">
+                        <label>Breve descrição da experiência</label>
+                        <textarea placeholder="Conte um pouco sobre sua experiência..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Quero ser professor voluntário</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- RODAPÉ INFO -->
+        <div class="info-banner">
+            <div>
+                <span><i class="fa-solid fa-lightbulb" style="color: rgb(64, 64, 64);"></i></span>
+                <p>Seu conhecimento pode gerar impacto real na educação de jovens interessados em tecnologia.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- Acessibilidade -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script src="../js/acessibilidade.js"></script>
+
+    <script src="../js/cursos.js"></script>
+
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) {
+                navLinks.classList.toggle('aberto');
+            }
+        }
+
+        fetch('../includes/header.html')
+            .then(r => r.text())
+            .then(d => {
+                document.getElementById('header').innerHTML = d;
+
+                const pagina = window.location.pathname.split('/').pop();
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    const href = link.getAttribute('href').split('/').pop();
+                    if (href === pagina) {
+                        link.classList.add('ativo');
+                    }
+                });
+
+                const menuToggle = document.getElementById('menuToggle');
+                if (menuToggle) {
+                    menuToggle.addEventListener('click', toggleMenu);
+                }
+            });
+
+        fetch('../includes/footer.html')
+            .then(r => r.text())
+            .then(d => document.getElementById('footer').innerHTML = d);
+
+        fetch('../includes/acessibilidade.html')
+            .then(r => r.text())
+            .then(d => {
+                const div = document.createElement('div');
+                div.innerHTML = d;
+                document.body.appendChild(div);
+            });
+
+        fetch('../includes/auth.html')
+            .then(r => r.text())
+            .then(d => {
+                document.body.insertAdjacentHTML('beforeend', d);
+            });
+    </script>
+</body>
+
+</html>

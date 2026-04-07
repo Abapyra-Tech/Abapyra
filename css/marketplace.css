@@ -16,6 +16,116 @@ html {
     scroll-behavior: smooth;
 }
 
+/* === ANIMAÇÕES GERAIS (Padrão do Site) === */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === ANIMAÇÕES DA PÁGINA DE SERVIÇOS === */
+
+/* Título principal com gradiente */
+.titulo {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.container p {
+    animation: fadeUp 0.85s ease forwards;
+    opacity: 0;
+}
+
+.container p { animation-delay: 0.4s; }
+
+/* Botões de ações */
+.acoes .btn-acoes {
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.acoes .btn-acoes:nth-child(1) { animation-delay: 0.6s; }
+.acoes .btn-acoes:nth-child(2) { animation-delay: 0.6s; }
+
+/* Título de Produtos */
+.titulo-produtos {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* Benefícios */
+.beneficios span {
+    animation: fadeUp 0.85s ease forwards;
+    opacity: 0;
+}
+
+.beneficios span:nth-child(1) { animation-delay: 0.4s; }
+.beneficios span:nth-child(2) { animation-delay: 0.4s; }
+.beneficios span:nth-child(3) { animation-delay: 0.4s; }
+
+/* CATEGORIAS - Versão mais robusta */
+.categorias a {
+    opacity: 0;         
+    animation: fadeUp 0.85s ease forwards;
+    animation-fill-mode: forwards;
+}
+
+/* Delays escalonados */
+.categorias a:nth-child(1) { animation-delay: 0.4s; }
+.categorias a:nth-child(2) { animation-delay: 0.6s; }
+.categorias a:nth-child(3) { animation-delay: 0.8s; }
+.categorias a:nth-child(4) { animation-delay: 1.0s; }
+.categorias a:nth-child(5) { animation-delay: 1.2s; }
+.categorias a:nth-child(6) { animation-delay: 1.4s; }
+
+/* Busca CEP */
+.busca-cep {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* === CARDS (parte que estava faltando) === */
+
+.cards .cartao {
+    animation: fadeUp 0.95s ease forwards;
+    opacity: 0;
+}
+
+/* Animação escalonada dos cards */
+.cards .cartao:nth-child(1) { animation-delay: 0.4s; }
+.cards .cartao:nth-child(2) { animation-delay: 0.6s; }
+.cards .cartao:nth-child(3) { animation-delay: 0.8s; }
+.cards .cartao:nth-child(4) { animation-delay: 1s; }
+
+/* === ESTADO INICIAL === */
+.titulo,
+header p,
+.acoes .btn-acoes,
+.titulo-produtos,
+.beneficios span,
+.categorias a,
+.busca-cep,
+.cards .cartao {
+    opacity: 0;
+}
+
+/* Garante que permaneçam visíveis após a animação */
+.titulo,
+header p,
+.acoes .btn-acoes,
+.titulo-produtos,
+.beneficios span,
+.categorias a,
+.busca-cep,
+.cards .cartao {
+    animation-fill-mode: forwards;
+}
+
 
 /* CONTAINER */
 .container{
