@@ -30,6 +30,10 @@
   --pd-font-body:    'DM Sans', sans-serif;
   --pd-radius:       14px;
   --pd-radius-sm:    8px;
+
+  /* ── Paleta verde escura (seção Porque) ── */
+  --pd-porque-bg:      #112827;
+  --pd-porque-card:    #1A2F29;
 }
 
 /* ── Wrapper principal ── */
@@ -125,99 +129,141 @@
 .page-descarte .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 56px;
   align-items: center;
-  padding: 64px 5% 56px;
+  padding: 80px 5% 72px;
   max-width: 1200px;
   margin: 0 auto;
   background: none;
   min-height: unset;
+  position: relative;
+}
+
+/* Detalhe decorativo de fundo */
+.page-descarte .hero::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: -60px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(6,165,74,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-descarte .hero > div {
+  position: relative;
+  z-index: 1;
 }
 
 .page-descarte .hero-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--pd-green-light);
   color: var(--pd-green-dark);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 20px;
   border: 1px solid rgba(6,165,74,0.3);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .page-descarte .hero h1 {
   font-family: var(--pd-font-head);
-  font-size: clamp(26px, 3.5vw, 44px);
+  font-size: clamp(30px, 3.8vw, 50px);
   font-weight: 800;
-  line-height: 1.13;
+  line-height: 1.1;
   color: var(--pd-navy);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 
 .page-descarte .hero h1 span {
   color: var(--pd-orange);
+  position: relative;
+}
+
+/* Sublinhado decorativo no span do h1 */
+.page-descarte .hero h1 span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pd-orange), transparent);
+  border-radius: 2px;
 }
 
 .page-descarte .hero > div > p {
   color: var(--pd-text-sec);
-  font-size: 14.5px;
-  max-width: 430px;
-  margin-bottom: 30px;
-  line-height: 1.75;
+  font-size: 15px;
+  max-width: 440px;
+  margin-bottom: 36px;
+  line-height: 1.8;
+  border-left: 3px solid rgba(6,165,74,0.4);
+  padding-left: 16px;
 }
 
 .page-descarte .hero-ctas {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.page-descarte .hero-img-placeholder {
-  width: 100%;
-  height: 360px;
-  background: linear-gradient(135deg, var(--pd-navy) 0%, #0d1a4a 60%, #122060 100%);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 14px;
-  border: 1px solid rgba(249,128,32,0.25);
-  position: relative;
-  overflow: hidden;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.page-descarte .hero-img-placeholder::before {
+/* ── Imagem ── */
+.page-descarte .hero-img-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px rgba(1,8,41,0.18),
+    0 0 0 1px rgba(6,165,74,0.15);
+  z-index: 1;
+}
+
+.page-descarte .hero-img-wrap::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 65% 40%, rgba(249,128,32,0.18) 0%, transparent 60%);
+  border-radius: 24px;
+  border: 2px solid rgba(6,165,74,0.3);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.page-descarte .e-icon {
-  font-size: 72px;
-  filter: drop-shadow(0 4px 20px rgba(249,128,32,0.5));
-  animation: pd-float 3s ease-in-out infinite;
-  position: relative;
+.page-descarte .hero-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(17,40,39,0.35), transparent);
+  z-index: 1;
+  pointer-events: none;
 }
 
-@keyframes pd-float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); }
+.page-descarte .hero-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+  transition: transform 0.6s ease;
 }
 
-.page-descarte .e-label {
-  font-family: var(--pd-font-head);
-  font-size: 13px;
-  color: var(--pd-gray);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
-  position: relative;
+.page-descarte .hero-img-wrap:hover .hero-img {
+  transform: scale(1.04);
 }
+
 
 /* ══════════════════════════════════════════════
    SEÇÕES – BASE
@@ -333,8 +379,8 @@
 }
 
 .page-descarte .result-card:hover {
-  border-color: var(--pd-orange);
-  box-shadow: var(--pd-shadow-hover);
+  border-color: var(--pd-green);
+  box-shadow: 0 8px 28px rgba(6,165,74,0.15);
   transform: translateY(-3px);
 }
 
@@ -388,10 +434,10 @@
 }
 
 /* ══════════════════════════════════════════════
-   POR QUE DESCARTAR
+   POR QUE DESCARTAR — Paleta verde escura
 ══════════════════════════════════════════════ */
 .page-descarte #porque {
-  background: var(--pd-navy);
+  background: var(--pd-porque-bg); /* #112827 */
 }
 
 .page-descarte #porque .section-title {
@@ -409,16 +455,16 @@
 }
 
 .page-descarte .motivo-card {
-  background: rgba(255,255,255,0.05);
-  border: 1.5px solid rgba(255,255,255,0.1);
+  background: var(--pd-porque-card); /* #1A2F29 */
+  border: 1.5px solid rgba(6, 165, 74, 0.15);
   border-radius: var(--pd-radius);
   padding: 30px 26px;
   transition: border-color 0.25s, background 0.25s, transform 0.25s;
 }
 
 .page-descarte .motivo-card:hover {
-  border-color: var(--pd-orange);
-  background: rgba(249,128,32,0.06);
+  border-color: var(--pd-green);
+  background: #1f3830;
   transform: translateY(-3px);
 }
 
@@ -435,9 +481,9 @@
   padding: 0;
 }
 
-.page-descarte .motivo-icon.verde { background: rgba(6,165,74,0.18) !important; }
+.page-descarte .motivo-icon.verde { background: rgba(6,165,74,0.20) !important; }
 .page-descarte .motivo-icon.azul  { background: rgba(249,128,32,0.18) !important; }
-.page-descarte .motivo-icon.roxo  { background: rgba(217,217,217,0.15) !important; }
+.page-descarte .motivo-icon.roxo  { background: rgba(217,217,217,0.12) !important; }
 
 .page-descarte .motivo-card h3 {
   font-family: var(--pd-font-head);
@@ -484,8 +530,8 @@
 }
 
 .page-descarte .item-card:hover {
-  border-color: var(--pd-orange);
-  box-shadow: var(--pd-shadow-hover);
+  border-color: var(--pd-green);
+  box-shadow: 0 8px 28px rgba(6,165,74,0.15);
   transform: translateY(-3px);
 }
 
@@ -501,8 +547,8 @@
 }
 
 .page-descarte .cta-banner {
-  background: linear-gradient(135deg, var(--pd-navy) 0%, #0d1a4a 100%);
-  border: 1.5px solid rgba(249,128,32,0.3);
+  background: linear-gradient(135deg, var(--pd-porque-bg) 0%, var(--pd-porque-card) 100%);
+  border: 1.5px solid rgba(6,165,74,0.25);
   border-radius: var(--pd-radius);
   padding: 28px 32px;
   display: flex;

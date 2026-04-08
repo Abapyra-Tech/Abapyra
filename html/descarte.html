@@ -21,19 +21,16 @@
     <div class="hero">
       <div class="fade-in">
         <div class="hero-tag">♻️ Descarte Responsável</div>
-        <h1>Tem eletrônicos, cabos ou<br /><span>lixo eletrônico</span> que não<br />têm mais utilidade?</h1>
-        <p>Tem uma solução para você! Mesmo quando um eletrônico não pode mais ser reutilizado, ele precisa de um
-          processo de descarte correto. O descarte inadequado pode contaminar o meio ambiente e desperdiçar materiais
-          valiosos que podem ser reciclados.</p>
+        <h1>Seu eletrônico<br />merece um<br /><span>fim consciente.</span></h1>
+        <p>Não sabe o que fazer com aquele celular quebrado, notebook antigo ou monte de cabos? A gente resolve. Descarte seus eletrônicos de forma segura, gratuita e responsável — bem pertinho de você.</p>
         <div class="hero-ctas">
           <a href="#busca" class="btn btn-orange">Encontrar ponto de descarte</a>
           <a href="#porque" class="btn btn-outline">Saiba mais</a>
         </div>
       </div>
 
-      <div class="hero-img-placeholder fade-in delay-2">
-        <div class="e-icon">🖥️</div>
-        <div class="e-label">Descarte consciente de eletrônicos</div>
+      <div class="hero-img-wrap fade-in delay-2">
+        <img src="../Imagens/descarteInicio.png" alt="Descarte consciente de eletrônicos" class="hero-img" />
       </div>
     </div>
 
@@ -175,7 +172,6 @@
         document.getElementById('header').innerHTML = d;
         console.log('Header carregado com sucesso');
 
-        // Marca link ativo APÓS o header carregar
         const pagina = window.location.pathname.split('/').pop();
         document.querySelectorAll('.nav-links a').forEach(link => {
           const href = link.getAttribute('href').split('/').pop();
@@ -186,7 +182,6 @@
           }
         });
 
-        // Hamburguer APÓS o header carregar
         const menuToggle = document.getElementById('menuToggle');
         if (menuToggle) {
           menuToggle.addEventListener('click', toggleMenu);
