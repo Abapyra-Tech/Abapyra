@@ -67,7 +67,7 @@
                                     <span>⏱ 4 semanas</span>
                                     <span>📊 Iniciante</span>
                                 </div>
-                                <p>Aprenda os fundamentos da eletrônica: componentes, 
+                                <p>Aprenda os fundamentos da eletrônica: componentes,
                                 </p>
                                 <a href="#" class="btn-curso">Acessar Curso</a>
                             </div>
@@ -202,71 +202,86 @@
         <!-- FORMULÁRIO PROFESSOR -->
         <section class="secao-form">
             <div class="form-wrap">
-                <form class="form-professor">
+                <form class="form-professor" action="https://formspree.io/f/mkopanbe" method="POST">
+
                     <div class="form-linha">
                         <div class="form-grupo">
                             <label>Nome completo *</label>
-                            <input type="text" />
+                            <input type="text" name="nome" required>
                         </div>
                         <div class="form-grupo">
                             <label>Email *</label>
-                            <input type="email" />
+                            <input type="email" name="email" required>
                         </div>
                     </div>
+
                     <div class="form-grupo">
                         <label>Cidade / Estado *</label>
-                        <input type="text" />
+                        <input type="text" name="cidade_estado" required>
                     </div>
+
                     <div class="form-grupo">
                         <label>Área de conhecimento *</label>
                         <div class="checkboxes">
-                            <label><input type="checkbox" /> Programação</label>
-                            <label><input type="checkbox" /> Eletrônica</label>
-                            <label><input type="checkbox" /> Robótica</label>
-                            <label><input type="checkbox" /> Manutenção de computadores</label>
-                            <label><input type="checkbox" /> Manutenção de celulares</label>
-                            <label><input type="checkbox" /> Outros</label>
+                            <label><input type="checkbox" name="area[]" value="Programação"> Programação</label>
+                            <label><input type="checkbox" name="area[]" value="Eletrônica"> Eletrônica</label>
+                            <label><input type="checkbox" name="area[]" value="Robótica"> Robótica</label>
+                            <label><input type="checkbox" name="area[]" value="Manutenção de computadores"> Manutenção
+                                de computadores</label>
+                            <label><input type="checkbox" name="area[]" value="Manutenção de celulares"> Manutenção de
+                                celulares</label>
+                            <label><input type="checkbox" name="area[]" value="Outros"> Outros</label>
                         </div>
                     </div>
+
                     <div class="form-linha">
                         <div class="form-grupo">
                             <label>Experiência *</label>
-                            <select>
-                                <option value="">Selecione sua experiê...</option>
-                                <option>Menos de 1 ano</option>
-                                <option>1 a 3 anos</option>
-                                <option>3 a 5 anos</option>
-                                <option>Mais de 5 anos</option>
+                            <select name="experiencia" required>
+                                <option value="">Selecione sua experiência...</option>
+                                <option value="Menos de 1 ano">Menos de 1 ano</option>
+                                <option value="1 a 3 anos">1 a 3 anos</option>
+                                <option value="3 a 5 anos">3 a 5 anos</option>
+                                <option value="Mais de 5 anos">Mais de 5 anos</option>
                             </select>
                         </div>
                         <div class="form-grupo">
                             <label>Disponibilidade *</label>
-                            <select>
-                                <option value="">Selecione sua disponibil...</option>
-                                <option>Fins de semana</option>
-                                <option>Dias úteis</option>
-                                <option>Qualquer dia</option>
+                            <select name="disponibilidade" required>
+                                <option value="">Selecione sua disponibilidade...</option>
+                                <option value="Fins de semana">Fins de semana</option>
+                                <option value="Dias úteis">Dias úteis</option>
+                                <option value="Qualquer dia">Qualquer dia</option>
                             </select>
                         </div>
                     </div>
+
                     <div class="form-grupo">
                         <label>Tempo disponível *</label>
                         <div class="radios">
-                            <label><input type="radio" name="tempo" /> 1 hora por semana</label>
-                            <label><input type="radio" name="tempo" /> 2 horas por semana</label>
-                            <label><input type="radio" name="tempo" /> 4 horas por semana</label>
-                            <label><input type="radio" name="tempo" /> Ocasional</label>
+                            <label><input type="radio" name="tempo_disponivel" value="1 hora por semana" required> 1
+                                hora por semana</label>
+                            <label><input type="radio" name="tempo_disponivel" value="2 horas por semana"> 2 horas por
+                                semana</label>
+                            <label><input type="radio" name="tempo_disponivel" value="4 horas por semana"> 4 horas por
+                                semana</label>
+                            <label><input type="radio" name="tempo_disponivel" value="Ocasional"> Ocasional</label>
                         </div>
                     </div>
+
                     <div class="form-grupo">
                         <label>LinkedIn ou portfólio</label>
-                        <input type="url" placeholder="https://..." />
+                        <input type="url" name="linkedin_portfolio" placeholder="https://...">
                     </div>
+
                     <div class="form-grupo">
                         <label>Breve descrição da experiência</label>
-                        <textarea placeholder="Conte um pouco sobre sua experiência..."></textarea>
+                        <textarea name="descricao" rows="5"
+                            placeholder="Conte um pouco sobre sua experiência..."></textarea>
                     </div>
+
                     <button type="submit" class="btn-submit">Quero ser professor voluntário</button>
+
                 </form>
             </div>
         </section>
@@ -342,6 +357,71 @@
             .then(d => {
                 document.body.insertAdjacentHTML('beforeend', d);
             });
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+        const form = document.querySelector('.form-professor');
+        const btn = form.querySelector('.btn-submit');
+        const messageDiv = document.createElement('div'); // Cria a div de mensagem
+
+        // Configurações da div de mensagem
+        messageDiv.id = 'form-message';
+        messageDiv.style.marginTop = '20px';
+        messageDiv.style.padding = '14px';
+        messageDiv.style.borderRadius = '8px';
+        messageDiv.style.fontWeight = '500';
+        messageDiv.style.display = 'none';
+        form.appendChild(messageDiv);
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const textoOriginal = btn.textContent;
+
+            // Feedback visual no botão
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            messageDiv.style.display = 'none';
+
+            // Prepara os dados
+            const formData = new FormData(this);
+
+            // Campos extras para identificar no email (útil no Formspree)
+            formData.append('formulario', 'Cadastro de Professor Voluntário');
+            formData.append('_subject', 'Novo Cadastro de Professor Voluntário');
+
+            try {
+                const response = await fetch('https://formspree.io/f/mkopanbe', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Sucesso
+                    messageDiv.style.backgroundColor = '#d1fae5';
+                    messageDiv.style.color = '#166534';
+                    messageDiv.innerHTML = '✅ Cadastro enviado com sucesso!<br>Entraremos em contato em breve.';
+                    form.reset();
+                } else {
+                    throw new Error('Erro ao enviar formulário');
+                }
+            } catch (error) {
+                // Erro
+                messageDiv.style.backgroundColor = '#fee2e2';
+                messageDiv.style.color = '#991b1b';
+                messageDiv.innerHTML = '❌ Ocorreu um erro ao enviar o formulário.<br>Por favor, tente novamente.';
+                console.error(error);
+            } finally {
+                // Restaura o botão
+                btn.textContent = textoOriginal;
+                btn.disabled = false;
+                messageDiv.style.display = 'block';
+            }
+        });
+    });
     </script>
 </body>
 

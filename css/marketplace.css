@@ -381,7 +381,7 @@ form{
     display:flex;
     align-items:center;
     background:#e6e6e6;
-    border:2px solid #ff8c00;
+    border:1px solid #ff8c00;
     border-radius:10px;
     padding:10px;
     margin-bottom:15px;
@@ -417,6 +417,15 @@ form{
 
 .submit:hover{
     background:#27ae60;
+}
+
+/* Mensagem de feedback */
+#form-message {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
 }
 
 /* IMAGENS */

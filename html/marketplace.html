@@ -33,7 +33,8 @@
 
             </div>
 
-            <p><strong>Venda eletrônicos usados ou quebrados e compre equipamentos reaproveitados em nossa plataforma sustentável</strong></p>
+            <p><strong>Venda eletrônicos usados ou quebrados e compre equipamentos reaproveitados em nossa plataforma
+                    sustentável</strong></p>
 
             <div class="beneficios">
                 <span>Preços acessíveis</span>
@@ -147,30 +148,40 @@
         <div class="form-wrap">
             <h3>Anuncie seu Produto</h3>
             <form id="cadastro-form" class="form" novalidate>
+
                 <div class="field">
                     <span aria-hidden="true"><i class="fa-slab-press fa-regular fa-user"
                             style="color: rgb(249, 115, 22);"></i></span>
                     <input type="text" name="nome" placeholder="Nome completo" required
                         aria-label="Campo de nome completo" />
                 </div>
+
                 <div class="field">
                     <span aria-hidden="true"><i class="fa-solid fa-map-pin"
                             style="color: rgb(249, 115, 22);"></i></span>
                     <input type="text" name="cep" placeholder="CEP/Bairro" required
                         aria-label="Campo de CEP ou bairro" />
                 </div>
+
                 <div class="field">
                     <span aria-hidden="true"><i class="fa-solid fa-wrench" style="color: rgb(249, 115, 22);"></i></span>
                     <input type="text" name="especialidade" placeholder="Especialidade" required
                         aria-label="Campo de especialidade" />
                 </div>
+
                 <div class="field">
                     <span aria-hidden="true"><i class="fa-solid fa-mobile" style="color: rgb(249, 115, 22);"></i></span>
-                    <input type="email" name="contato" placeholder="E-mail ou telefone" required
+                    <input type="text" name="contato" placeholder="E-mail ou telefone" required
                         aria-label="Campo de informações de contato" />
                 </div>
-                <button type="submit" class="submit">Enviar</button>
+
+                <input type="hidden" name="formulario" value="Cadastro de Profissional">
+                <input type="hidden" name="_subject" value="Novo Cadastro de Profissional">
+
+                <button type="submit" class="submit" id="submit-btn">Enviar</button>
             </form>
+
+            <div id="form-message"></div>
         </div>
         </section>
     </main>
@@ -233,6 +244,49 @@
             document.getElementById('navLinks').classList.toggle('aberto');
             document.getElementById('navActions').classList.toggle('aberto');
         }
+
+        document.getElementById('cadastro-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            const messageDiv = document.getElementById('form-message');
+
+            const textoOriginal = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            messageDiv.innerHTML = '';
+
+            const formData = new FormData(this);
+
+            // Campos extras para identificação
+            formData.append('formulario', 'Cadastro de Profissional');
+            formData.append('_subject', 'Novo Cadastro de Profissional');
+
+            try {
+                const response = await fetch('https://formspree.io/f/mykbvzyr', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    messageDiv.style.color = '#22c55e';
+                    messageDiv.innerHTML = '✅ Cadastro enviado com sucesso!<br>Entraremos em contato em breve.';
+                    this.reset();
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (error) {
+                messageDiv.style.color = '#ef4444';
+                messageDiv.innerHTML = '❌ Ocorreu um erro. Por favor, tente novamente.';
+                console.error(error);
+            } finally {
+                btn.textContent = textoOriginal;
+                btn.disabled = false;
+            }
+        });
     </script>
 </body>
 
