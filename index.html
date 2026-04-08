@@ -287,7 +287,7 @@
   <script src="./js/acessibilidade.js"></script>
 
   <script>
-    fetch('includes/header.html')
+    fetch('/includes/header.html')
       .then(r => r.text())
       .then(d => {
         document.getElementById('header').innerHTML = d;
@@ -311,11 +311,11 @@
         }
       });
 
-    fetch('includes/footer.html')
+    fetch('/includes/footer.html')
       .then(r => r.text())
       .then(d => document.getElementById('footer').innerHTML = d);
 
-    fetch('includes/acessibilidade.html')
+    fetch('/includes/acessibilidade.html')
       .then(r => r.text())
       .then(d => {
         const div = document.createElement('div');

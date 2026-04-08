@@ -141,7 +141,7 @@
 
     <script>
         // ── Header ──
-        fetch('../includes/header.html')
+        fetch('/includes/header.html')
             .then(r => r.text())
             .then(d => {
                 document.getElementById('header').innerHTML = d;
@@ -166,12 +166,12 @@
             });
 
         // ── Footer ──
-        fetch('../includes/footer.html')
+        fetch('/includes/footer.html')
             .then(r => r.text())
             .then(d => document.getElementById('footer').innerHTML = d);
 
         // ── Acessibilidade ──
-        fetch('../includes/acessibilidade.html')
+        fetch('/includes/acessibilidade.html')
             .then(r => r.text())
             .then(d => {
                 const div = document.createElement('div');
@@ -180,14 +180,14 @@
             });
 
         // ── Auth: injeta HTML primeiro, só depois carrega o JS ──
-        fetch('../includes/auth.html')
+        fetch('/includes/auth.html')
             .then(r => r.text())
             .then(d => {
                 document.body.insertAdjacentHTML('beforeend', d);
 
                 // Carrega auth.js dinamicamente APÓS o modal estar no DOM
                 const script = document.createElement('script');
-                script.src = '../js/auth.js';
+                script.src = '/js/auth.js';
                 document.body.appendChild(script);
             });
 
