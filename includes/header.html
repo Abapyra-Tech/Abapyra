@@ -33,12 +33,12 @@
 </nav>
 
 <script>
-  fetch('includes/auth.html')
+  fetch('/includes/auth.html')
     .then(r => r.text())
     .then(html => {
       document.body.insertAdjacentHTML('beforeend', html);
       const s = document.createElement('script');
-      s.src = 'js/auth.js';
+      s.src = '/js/auth.js';
       document.body.appendChild(s);
     });
 </script>
