@@ -188,50 +188,59 @@
                 <h2>Cadastro de ONG / projeto social</h2>
                 <p>Preencha o formulário para iniciar o processo de aprovação</p>
             </div>
-            <form class="form-ong">
+            <form class="form-ong" action="https://formspree.io/f/mbdpejzv" method="POST">
+
                 <div class="form-grupo">
                     <label>Nome da ONG ou projeto *</label>
-                    <input type="text" placeholder="Digite o nome completo" />
+                    <input type="text" name="nome_ong" placeholder="Digite o nome completo" required>
                 </div>
+
                 <div class="form-linha">
                     <div class="form-grupo">
                         <label>Cidade *</label>
-                        <input type="text" placeholder="Cidade" />
+                        <input type="text" name="cidade" placeholder="Cidade" required>
                     </div>
                     <div class="form-grupo">
                         <label>Estado *</label>
-                        <select>
+                        <select name="estado" required>
                             <option value="">Selecione</option>
-                            <option>SP</option>
-                            <option>RJ</option>
-                            <option>MG</option>
-                            <option>BA</option>
+                            <option value="SP">SP</option>
+                            <option value="RJ">RJ</option>
+                            <option value="MG">MG</option>
+                            <option value="BA">BA</option>
+                            <!-- Adicione outros estados se quiser -->
                         </select>
                     </div>
                 </div>
+
                 <div class="form-grupo">
                     <label>Nome do responsável *</label>
-                    <input type="text" placeholder="Nome completo" />
+                    <input type="text" name="responsavel" placeholder="Nome completo" required>
                 </div>
+
                 <div class="form-linha">
                     <div class="form-grupo">
                         <label>Email *</label>
-                        <input type="email" placeholder="email@exemplo.com" />
+                        <input type="email" name="email" placeholder="email@exemplo.com" required>
                     </div>
                     <div class="form-grupo">
                         <label>Telefone *</label>
-                        <input type="tel" placeholder="(00) 00000-0000" />
+                        <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
                     </div>
                 </div>
+
                 <div class="form-grupo">
                     <label>Instagram do projeto *</label>
-                    <input type="text" placeholder="@seuprojeto" />
+                    <input type="text" name="instagram" placeholder="@seuprojeto" required>
                 </div>
+
                 <div class="form-grupo">
                     <label>Descrição do projeto *</label>
-                    <textarea
-                        placeholder="Conte sobre seu projeto, objetivos e como os eletrônicos serão utilizados..."></textarea>
+                    <textarea name="descricao" rows="6"
+                        placeholder="Conte sobre seu projeto, objetivos e como os eletrônicos serão utilizados..."
+                        required></textarea>
                 </div>
+
                 <div class="form-grupo">
                     <label>Upload de fotos do projeto *</label>
                     <div class="upload-area">
@@ -240,7 +249,9 @@
                         <small>JPG, PNG até 10MB</small>
                     </div>
                 </div>
-                <button type="submit" class="btn-verde btn-lg">Ver projeto</button>
+
+                <button type="submit" class="btn-verde btn-lg">Enviar Cadastro do Projeto</button>
+
                 <p class="form-aviso">Todos os projetos passam por uma análise antes de serem aprovados para receber
                     doações.</p>
             </form>
@@ -325,6 +336,65 @@
             document.getElementById('navLinks').classList.toggle('aberto');
             document.getElementById('navActions').classList.toggle('aberto');
         }
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const form = document.querySelector('.form-ong');
+            const btn = form.querySelector('.btn-verde');
+
+            // Cria div de mensagem
+            const messageDiv = document.createElement('div');
+            messageDiv.id = 'form-message';
+            messageDiv.style.marginTop = '25px';
+            messageDiv.style.padding = '14px 16px';
+            messageDiv.style.borderRadius = '8px';
+            messageDiv.style.fontWeight = '500';
+            messageDiv.style.display = 'none';
+            form.appendChild(messageDiv);
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const textoOriginal = btn.textContent;
+
+                btn.textContent = 'Enviando cadastro...';
+                btn.disabled = true;
+                messageDiv.style.display = 'none';
+
+                const formData = new FormData(this);
+
+                // Campos extras para identificação no email
+                formData.append('formulario', 'Cadastro de ONG / Projeto');
+                formData.append('_subject', 'Novo Cadastro de Projeto - ONG');
+
+                try {
+                    const response = await fetch('https://formspree.io/f/mbdpejzv', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        messageDiv.style.backgroundColor = '#d1fae5';
+                        messageDiv.style.color = '#166534';
+                        messageDiv.innerHTML = '✅ Cadastro enviado com sucesso!<br>Analisaremos seu projeto e entraremos em contato em breve.';
+                        form.reset();
+                    } else {
+                        throw new Error('Erro no envio');
+                    }
+                } catch (error) {
+                    messageDiv.style.backgroundColor = '#fee2e2';
+                    messageDiv.style.color = '#991b1b';
+                    messageDiv.innerHTML = '❌ Ocorreu um erro ao enviar o cadastro.<br>Por favor, tente novamente.';
+                    console.error(error);
+                } finally {
+                    btn.textContent = textoOriginal;
+                    btn.disabled = false;
+                    messageDiv.style.display = 'block';
+                }
+            });
+        });
     </script>
 </body>
 
