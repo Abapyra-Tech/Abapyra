@@ -28,6 +28,7 @@
 
                 <a href="#produtos" class="btn-acoes">
                     <i class="fa-solid fa-bag-shopping"></i>
+            
                     <span>Comprar Eletrônicos</span>
                 </a>
 
@@ -50,17 +51,16 @@
 
             <div class="categorias">
 
-                <a href="#">Smartphones</a>
-                <a href="#">Notebooks</a>
-                <a href="#">Celulares</a>
-                <a href="#">Componentes</a>
-                <a href="#">Peças</a>
-                <a href="#">Todos</a>
+                <a href="#" data-categoria="smartphones">Smartphones</a>
+                <a href="#" data-categoria="notebooks">Notebooks</a>
+                <a href="#" data-categoria="componentes">Componentes</a>
+                <a href="#" data-categoria="pecas">Peças</a>
+                <a href="#" data-categoria="todos">Todos</a>
 
             </div>
 
             <div class="busca-cep">
-
+               
                 <div class="input-cep">
                     <span class="icon">📍</span>
                     <input type="text" placeholder="Digite o seu CEP">
@@ -69,11 +69,21 @@
                 <button class="btn-buscar">🔍</button>
 
             </div>
+            
+             <p id="resultado-cep"></p>
+
+             <div class="carrinho-topo">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="contador-carrinho">0</span>
+            </div>
+
+            
+
 
             <div class="cards">
 
-                <div class="cartao">
-                    <img src="../Imagens/099a3140b59323f8f7580752f8752b1c 1.png">
+                <div class="cartao" data-categoria="smartphones">
+                    <img src="../Imagens/099a3140b59323f8f7580752f8752b1c 1.png" alt="Celular iphone">
                     <h3>Iphone 11 128GB - Apple</h3>
                     <p>Defeito: Troca Display danificado</p>
                     <span class="preco">R$ 600</span>
@@ -84,12 +94,12 @@
                     </div>
                 </div>
 
-                <div class="cartao">
-                    <img src="../Imagens/fonte.png">
+                <div class="cartao" data-categoria="pecas">
+                    <img src="../Imagens/fonte.png" alt="Fonte Corsair 650W">
                     <h3>Fonte Corsair 650W
                     </h3>
                     <p>Defeito: Não liga, possível reparo</p>
-                    <span class="preco">R$ 600</span>
+                    <span class="preco">R$ 450</span>
 
                     <div class="botoes">
                         <button class="detalhes">Detalhes</button>
@@ -97,11 +107,11 @@
                     </div>
                 </div>
 
-                <div class="cartao">
-                    <img src="../Imagens/Rectangle 80.png">
+                <div class="cartao" data-categoria="componentes">
+                    <img src="../Imagens/Rectangle 80.png" alt="Placa de circuito">
                     <h3> Placa de Circuito - Arduino </h3>
-                    <p>Defeito: Não liga, possível reparo kkk kkkkkk</p>
-                    <span class="preco">R$ 600</span>
+                    <p>Defeito: Troca necessária de Componente</p>
+                    <span class="preco">R$ 150</span>
 
                     <div class="botoes">
                         <button class="detalhes">Detalhes</button>
@@ -110,11 +120,11 @@
                 </div>
 
 
-                <div class="cartao">
-                    <img src="../Imagens/relogio.png">
+                <div class="cartao" data-categoria="pecas">
+                    <img src="../Imagens/relogio.png" alt="Relogio Aple">
                     <h3> Tela quebrada - Apple</h3>
                     <p>Defeito: Não liga, possível reparo</p>
-                    <span class="preco">R$ 600</span>
+                    <span class="preco">R$ 350</span>
 
                     <div class="botoes">
                         <button class="detalhes">Detalhes</button>
@@ -124,8 +134,8 @@
 
 
 
-                <div class="cartao">
-                    <img src="../Imagens/placa.png">
+                <div class="cartao" data-categoria="notebooks">
+                    <img src="../Imagens/placa.png" alt="placa de notebook">
                     <h3>Placa Notebook Dell</h3>
                     <p>Defeito: Queimada, Verificar troca</p>
                     <span class="preco">R$ 150</span>
@@ -134,6 +144,12 @@
                         <button class="detalhes">Detalhes</button>
                         <button class="comprar">Comprar</button>
                     </div>
+                </div>
+
+                 <div id="carrinho">
+                    <h3>🛒 Carrinho</h3>
+                    <ul id="lista-carrinho"></ul>
+                    <p id="total"></p>
                 </div>
 
             </div>
@@ -199,6 +215,8 @@
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
     <script src="../js/acessibilidade.js"></script>
+    <script src="../js/marketplace.js"></script>
+
 
    <script>
   // abrirModal disponível globalmente antes de qualquer clique
