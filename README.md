@@ -2,7 +2,7 @@
 
 Plataforma web voltada para a sustentabilidade tecnológica, conectando pessoas, técnicos e projetos sociais para reaproveitar eletrônicos e reduzir o lixo eletrônico.
 
-<img width="1891" height="813" alt="image" src="https://github.com/user-attachments/assets/4fefa19a-81d5-42d0-8377-0975706f2507" />
+<img width="939" height="476" alt="Captura de tela 2026-04-10 175031" src="https://github.com/user-attachments/assets/faf398f7-fb59-470e-8752-46347f84c086" />
 
 ---
 
@@ -18,10 +18,11 @@ A **Abapyra Tech** transforma o problema do lixo eletrônico em oportunidade de 
 |---|---|---|
 | Início | `index.html` | Hero, serviços, impacto e pilares |
 | Serviços | `servicos.html` | Reparo técnico e cadastro de técnicos |
-| Doações | `doacoes.html` | Doe eletrônicos e histórias de transformação |
-| Receba Doações | `receba-doacoes.html` | Cadastro de ONGs e projetos sociais |
+| Marketplace | `marketplace.html` | Compra e anuncio de produtos |
 | Educação | `educacao.html` | Cursos gratuitos de tecnologia |
-| Sobre | `sobre.html` | Missão, visão e valores |
+| Doe | `doacoes.html` | Doe eletrônicos e histórias de transformação |
+| Descarte | `descarte.html` | Informações sobre descarte |
+| Receba Doações | `receba-doacoes.html` | Cadastro de ONGs e projetos sociais |
 
 ---
 
